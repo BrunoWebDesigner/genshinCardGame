@@ -53,10 +53,11 @@ function gacha() {
         let cartaObtida = cartasRank[Math.floor(Math.random() * cartasRank.length)];
 
         // Adicionar à coleção do jogador ou incrementar contador de repetidas
-        if (colecaoJogador[cartaObtida.nome + '-' + cartaObtida.rank]) {
-            colecaoJogador[cartaObtida.nome + '-' + cartaObtida.rank].quantidade += 1;
+        const chaveCarta = cartaObtida.nome + '-' + cartaObtida.rank;
+        if (colecaoJogador[chaveCarta]) {
+            colecaoJogador[chaveCarta].quantidade += 1;
         } else {
-            colecaoJogador[cartaObtida.nome + '-' + cartaObtida.rank] = { ...cartaObtida, quantidade: 1 };
+            colecaoJogador[chaveCarta] = { ...cartaObtida, quantidade: 1 };
         }
 
         // Mostrar o resultado
@@ -83,8 +84,8 @@ function mostrarCartaAnimada(carta) {
 
     // Adicionar o conteúdo da carta com animação
     cartaAnimadaDiv.innerHTML = `
-        <div class="carta-animada" padding: 20px;">
-            <p style="color: black; text-align: center; font-size: 20px; font-weight: bold; margin-top: 10px;">Ultima Carta</p>
+        <div class="carta-animada" style="padding: 20px;">
+            <p style="color: black; text-align: center; font-size: 20px; font-weight: bold; margin-top: 10px;">Última Carta</p>
             <img src="${carta.imagem}" alt="${carta.nome}" style="width: 200px; height: auto; display: block; margin: 0 auto;">
             <p style="color: black; text-align: center; font-size: 20px; font-weight: bold; margin-top: 10px;">${carta.nome}</p>
         </div>
@@ -98,7 +99,10 @@ function mudarTela() {
 
 function exibirColecao() {
     const mainContent = document.getElementById('main-content');
-    mainContent.innerHTML = '<h2>Sua Coleção de Cartas</h2><div id="colecao"></div>';
+    mainContent.innerHTML = `
+        <h2>Sua Coleção de Cartas</h2>
+        <div id="colecao" style="display: flex; flex-wrap: wrap; gap: 20px;"></div>
+    `;
     const colecaoDiv = document.getElementById('colecao');
 
     // Se não há cartas no arquivo JSON
@@ -117,8 +121,8 @@ function exibirColecao() {
 
         // Criar o elemento da carta
         let cartaHtml = `
-            <div class="carta" style="opacity: ${transparencia};" data-nome="${carta.nome}" data-rank="${carta.rank}">
-                <img src="${carta.imagem}" alt="${carta.nome}">
+            <div class="carta" style="position: relative; opacity: ${transparencia}; text-align: center;" data-nome="${carta.nome}" data-rank="${carta.rank}">
+                <img src="${carta.imagem}" alt="${carta.nome}" style="width: 100%; height: auto;">
         `;
 
         // Mostrar o contador de cartas repetidas se o jogador possuir a carta
@@ -127,6 +131,15 @@ function exibirColecao() {
                 <span class="contador" style="position: absolute; top: 5px; right: 5px; background-color: red; color: white; border-radius: 50%; padding: 5px;">
                     ${possuiCarta.quantidade}
                 </span>
+            `;
+        }
+
+        // Verificar se o jogador tem 10 ou mais cartas repetidas para exibir o botão de upgrade
+        if (possuiCarta && possuiCarta.quantidade >= 10) {
+            cartaHtml += `
+                <button class="upgrade-btn" style="position: absolute; bottom: 5px; right: 5px; background-color: green; color: white; border: none; border-radius: 50%; width: 30px; height: 30px; cursor: pointer;">
+                    &#x21e7; <!-- Seta para cima -->
+                </button>
             `;
         }
 
@@ -148,6 +161,65 @@ function exibirColecao() {
             exibirCartaAmpliada(cartaSelecionada);
         });
     });
+
+    // Adicionar evento de clique para o botão de upgrade
+    document.querySelectorAll('.upgrade-btn').forEach(button => {
+        button.addEventListener('click', function (event) {
+            event.stopPropagation(); // Prevenir que o clique abra a carta
+            const cartaNome = this.parentElement.getAttribute('data-nome');
+            const cartaRank = this.parentElement.getAttribute('data-rank');
+
+            // Executar a função de upgrade
+            realizarUpgrade(cartaNome, cartaRank);
+        });
+    });
+}
+
+// Função para realizar o upgrade de cartas
+function realizarUpgrade(nomeCarta, rankCarta) {
+    const chaveCarta = nomeCarta + '-' + rankCarta;
+
+    // Verificar se o jogador tem 10 ou mais cartas repetidas
+    if (colecaoJogador[chaveCarta] && colecaoJogador[chaveCarta].quantidade >= 10) {
+        // Subtrair 10 cartas da raridade atual
+        colecaoJogador[chaveCarta].quantidade -= 10;
+
+        // Se a quantidade chegar a 0, remover a carta da coleção
+        if (colecaoJogador[chaveCarta].quantidade === 0) {
+            delete colecaoJogador[chaveCarta];
+        }
+
+        // Determinar o próximo rank
+        let novoRank = obterProximoRank(rankCarta);
+
+        // Adicionar 1 carta do novo rank
+        const novaChave = nomeCarta + '-' + novoRank;
+        if (colecaoJogador[novaChave]) {
+            colecaoJogador[novaChave].quantidade += 1;
+        } else {
+            let carta = cartas.find(c => c.nome === nomeCarta && c.rank === novoRank);
+            colecaoJogador[novaChave] = { ...carta, quantidade: 1 };
+        }
+
+        // Atualizar a coleção exibida
+        exibirColecao();
+    } else {
+        alert('Você precisa de 10 cartas repetidas para realizar o upgrade!');
+    }
+}
+
+// Função para obter o próximo rank
+function obterProximoRank(rankAtual) {
+    const ranks = ['F', 'E', 'D', 'C', 'B', 'A', 'S'];
+    const indexAtual = ranks.indexOf(rankAtual);
+
+    // Se o rank atual não for o último (S), retornar o próximo rank
+    if (indexAtual < ranks.length - 1) {
+        return ranks[indexAtual + 1];
+    } else {
+        // Já está no rank mais alto (S), então não faz upgrade
+        return rankAtual;
+    }
 }
 
 // Função para exibir a tela de batalha (esqueleto)
