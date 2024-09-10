@@ -1070,6 +1070,69 @@
             "atq": 334,
             "def": 783,
             "prof": 994
+        },
+        {
+            "nome": "Diona",
+            "rank": "F",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/diona1.png",
+            "hp": 2061,
+            "atq": 45,
+            "def": 129,
+            "prof": 558
+        },
+        {
+            "nome": "Diona",
+            "rank": "E",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/diona2.png",
+            "hp": 3985,
+            "atq": 88,
+            "def": 250,
+            "prof": 627
+        },
+        {
+            "nome": "Diona",
+            "rank": "D",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/diona3.png",
+            "hp": 5074,
+            "atq": 112,
+            "def": 318,
+            "prof": 696
+        },
+        {
+            "nome": "Diona",
+            "rank": "C",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/diona4.png",
+            "hp": 6304,
+            "atq": 139,
+            "def": 395,
+            "prof": 765
+        },
+        {
+            "nome": "Diona",
+            "rank": "B",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/diona5.png",
+            "hp": 7392,
+            "atq": 164,
+            "def": 463,
+            "prof": 834
+        },
+        {
+            "nome": "Diona",
+            "rank": "A",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/diona6.png",
+            "hp": 8481,
+            "atq": 188,
+            "def": 532,
+            "prof": 903
+        },
+        {
+            "nome": "Diona",
+            "rank": "S",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/diona7.png",
+            "hp": 9569,
+            "atq": 212,
+            "def": 600,
+            "prof": 972
         }
     ]
 }

@@ -1,7 +1,21 @@
+
 let cartas; // Variável para armazenar as cartas do JSON
 let colecaoJogador = {}; // Coleção do jogador, agora armazenada como objeto para contar repetições
 let moedas = 100000; // Moedas iniciais do jogador
 let deck = []; // Lista para armazenar o deck do jogador (máximo 7 cartas)
+
+// Carregar o arquivo JSON de cartas e depois exibir a coleção
+fetch('cartas.json')
+    .then(response => response.json())
+    .then(data => {
+        cartas = data.personagens;
+
+        // Exibir a coleção após o carregamento bem-sucedido das cartas
+        exibirColecao();
+    })
+    .catch(error => {
+        console.error('Erro ao carregar o arquivo JSON de cartas:', error);
+    });
 
 // Carregar o arquivo JSON de cartas
 fetch('cartas.json')
@@ -92,7 +106,6 @@ function mostrarCartaAnimada(carta) {
         </div>
     `;
 }
-
 
 function exibirColecao() {
     const mainContent = document.getElementById('main-content');
