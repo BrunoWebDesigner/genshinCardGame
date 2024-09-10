@@ -629,6 +629,447 @@
             "atq": 225,
             "def": 648,
             "prof": 1002
+        },
+        {
+            "nome": "Bennett",
+            "rank": "F",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/bennett1.png",
+            "hp": 2670,
+            "atq": 41,
+            "def": 166,
+            "prof": 577
+        },
+        {
+            "nome": "Bennett",
+            "rank": "E",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/bennett2.png",
+            "hp": 5162,
+            "atq": 79,
+            "def": 321,
+            "prof": 646
+        },
+        {
+            "nome": "Bennett",
+            "rank": "D",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/bennett3.png",
+            "hp": 6573,
+            "atq": 101,
+            "def": 408,
+            "prof": 715
+        },
+        {
+            "nome": "Bennett",
+            "rank": "C",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/bennett4.png",
+            "hp": 8167,
+            "atq": 125,
+            "def": 508,
+            "prof": 784
+        },
+        {
+            "nome": "Bennett",
+            "rank": "B",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/bennett5.png",
+            "hp": 9576,
+            "atq": 147,
+            "def": 595,
+            "prof": 853
+        },
+        {
+            "nome": "Bennett",
+            "rank": "A",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/bennett6.png",
+            "hp": 10987,
+            "atq": 169,
+            "def": 683,
+            "prof": 922
+        },
+        {
+            "nome": "Bennett",
+            "rank": "S",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/bennett7.png",
+            "hp": 12397,
+            "atq": 191,
+            "def": 771,
+            "prof": 991
+        },
+        {
+            "nome": "Candace",
+            "rank": "F",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/candace1.png",
+            "hp": 2342,
+            "atq": 45,
+            "def": 147,
+            "prof": 565
+        },
+        {
+            "nome": "Candace",
+            "rank": "E",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/candace2.png",
+            "hp": 4528,
+            "atq": 88,
+            "def": 284,
+            "prof": 634
+        },
+        {
+            "nome": "Candace",
+            "rank": "D",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/candace3.png",
+            "hp": 5766,
+            "atq": 112,
+            "def": 361,
+            "prof": 703
+        },
+        {
+            "nome": "Candace",
+            "rank": "C",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/candace4.png",
+            "hp": 7164,
+            "atq": 139,
+            "def": 449,
+            "prof": 772
+        },
+        {
+            "nome": "Candace",
+            "rank": "B",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/candace5.png",
+            "hp": 8400,
+            "atq": 164,
+            "def": 527,
+            "prof": 841
+        },
+        {
+            "nome": "Candace",
+            "rank": "A",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/candace6.png",
+            "hp": 9637,
+            "atq": 188,
+            "def": 604,
+            "prof": 910
+        },
+        {
+            "nome": "Candace",
+            "rank": "S",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/candace7.png",
+            "hp": 10874,
+            "atq": 212,
+            "def": 628,
+            "prof": 979
+        },
+        {
+            "nome": "Chongyun",
+            "rank": "F",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/chongyun1.png",
+            "hp": 2365,
+            "atq": 48,
+            "def": 139,
+            "prof": 554
+        },
+        {
+            "nome": "Chongyun",
+            "rank": "E",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/chongyun2.png",
+            "hp": 4574,
+            "atq": 92,
+            "def": 270,
+            "prof": 623
+        },
+        {
+            "nome": "Chongyun",
+            "rank": "D",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/chongyun3.png",
+            "hp": 5823,
+            "atq": 118,
+            "def": 343,
+            "prof": 692
+        },
+        {
+            "nome": "Chongyun",
+            "rank": "C",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/chongyun4.png",
+            "hp": 7236,
+            "atq": 146,
+            "def": 427,
+            "prof": 761
+        },
+        {
+            "nome": "Chongyun",
+            "rank": "B",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/chongyun5.png",
+            "hp": 8484,
+            "atq": 172,
+            "def": 500,
+            "prof": 830
+        },
+        {
+            "nome": "Chongyun",
+            "rank": "A",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/chongyun6.png",
+            "hp": 9734,
+            "atq": 197,
+            "def": 574,
+            "prof": 899
+        },
+        {
+            "nome": "Chongyun",
+            "rank": "S",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/chongyun7.png",
+            "hp": 10983,
+            "atq": 223,
+            "def": 648,
+            "prof": 968
+        },
+        {
+            "nome": "Collei",
+            "rank": "F",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/collei1.png",
+            "hp": 2108,
+            "atq": 43,
+            "def": 129,
+            "prof": 595
+        },
+        {
+            "nome": "Collei",
+            "rank": "E",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/collei2.png",
+            "hp": 4076,
+            "atq": 83,
+            "def": 250,
+            "prof": 664
+        },
+        {
+            "nome": "Collei",
+            "rank": "D",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/collei3.png",
+            "hp": 5189,
+            "atq": 105,
+            "def": 318,
+            "prof": 733
+        },
+        {
+            "nome": "Collei",
+            "rank": "C",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/collei4.png",
+            "hp": 6448,
+            "atq": 131,
+            "def": 395,
+            "prof": 802
+        },
+        {
+            "nome": "Collei",
+            "rank": "B",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/collei5.png",
+            "hp": 7560,
+            "atq": 154,
+            "def": 463,
+            "prof": 871
+        },
+        {
+            "nome": "Collei",
+            "rank": "A",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/collei6.png",
+            "hp": 8674,
+            "atq": 176,
+            "def": 532,
+            "prof": 940
+        },
+        {
+            "nome": "Collei",
+            "rank": "S",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/collei7.png",
+            "hp": 9787,
+            "atq": 199,
+            "def": 600,
+            "prof": 1009
+        },
+        {
+            "nome": "Cyno",
+            "rank": "F",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/cyno1.png",
+            "hp": 2522,
+            "atq": 64,
+            "def": 173,
+            "prof": 593
+        },
+        {
+            "nome": "Cyno",
+            "rank": "E",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/cyno2.png",
+            "hp": 5021,
+            "atq": 127,
+            "def": 345,
+            "prof": 662
+        },
+        {
+            "nome": "Cyno",
+            "rank": "D",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/cyno3.png",
+            "hp": 6459,
+            "atq": 164,
+            "def": 444,
+            "prof": 731
+        },
+        {
+            "nome": "Cyno",
+            "rank": "C",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/cyno4.png",
+            "hp": 8102,
+            "atq": 206,
+            "def": 557,
+            "prof": 800
+        },
+        {
+            "nome": "Cyno",
+            "rank": "B",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/cyno5.png",
+            "hp": 9556,
+            "atq": 243,
+            "def": 657,
+            "prof": 869
+        },
+        {
+            "nome": "Cyno",
+            "rank": "A",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/cyno6.png",
+            "hp": 11020,
+            "atq": 280,
+            "def": 758,
+            "prof": 938
+        },
+        {
+            "nome": "Cyno",
+            "rank": "S",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/cyno7.png",
+            "hp": 12490,
+            "atq": 318,
+            "def": 859,
+            "prof": 1007
+        },
+        {
+            "nome": "Dehya",
+            "rank": "F",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/dehya1.png",
+            "hp": 3165,
+            "atq": 53,
+            "def": 126,
+            "prof": 579
+        },
+        {
+            "nome": "Dehya",
+            "rank": "E",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/dehya2.png",
+            "hp": 6301,
+            "atq": 106,
+            "def": 252,
+            "prof": 648
+        },
+        {
+            "nome": "Dehya",
+            "rank": "D",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/dehya3.png",
+            "hp": 8105,
+            "atq": 137,
+            "def": 324,
+            "prof": 717
+        },
+        {
+            "nome": "Dehya",
+            "rank": "C",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/dehya4.png",
+            "hp": 10168,
+            "atq": 172,
+            "def": 407,
+            "prof": 786
+        },
+        {
+            "nome": "Dehya",
+            "rank": "B",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/dehya5.png",
+            "hp": 11992,
+            "atq": 203,
+            "def": 480,
+            "prof": 855
+        },
+        {
+            "nome": "Dehya",
+            "rank": "A",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/dehya6.png",
+            "hp": 13829,
+            "atq": 234,
+            "def": 553,
+            "prof": 924
+        },
+        {
+            "nome": "Dehya",
+            "rank": "S",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/dehya7.png",
+            "hp": 15674,
+            "atq": 265,
+            "def": 627,
+            "prof": 993
+        },
+        {
+            "nome": "Diluc",
+            "rank": "F",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/diluc1.png",
+            "hp": 2621,
+            "atq": 67,
+            "def": 158,
+            "prof": 580
+        },
+        {
+            "nome": "Diluc",
+            "rank": "E",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/diluc2.png",
+            "hp": 5218,
+            "atq": 134,
+            "def": 315,
+            "prof": 649
+        },
+        {
+            "nome": "Diluc",
+            "rank": "D",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/diluc3.png",
+            "hp": 6712,
+            "atq": 173,
+            "def": 405,
+            "prof": 718
+        },
+        {
+            "nome": "Diluc",
+            "rank": "C",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/diluc4.png",
+            "hp": 8420,
+            "atq": 217,
+            "def": 508,
+            "prof": 787
+        },
+        {
+            "nome": "Diluc",
+            "rank": "B",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/diluc5.png",
+            "hp": 9931,
+            "atq": 256,
+            "def": 599,
+            "prof": 856
+        },
+        {
+            "nome": "Diluc",
+            "rank": "A",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/diluc6.png",
+            "hp": 11452,
+            "atq": 295,
+            "def": 691,
+            "prof": 925
+        },
+        {
+            "nome": "Diluc",
+            "rank": "S",
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/diluc7.png",
+            "hp": 12980,
+            "atq": 334,
+            "def": 783,
+            "prof": 994
         }
     ]
 }

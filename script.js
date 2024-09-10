@@ -131,8 +131,8 @@ function exibirColecao() {
             `;
         }
 
-        // Verificar se o jogador tem 10 ou mais cartas repetidas para exibir o botão de upgrade
-        if (possuiCarta && possuiCarta.quantidade >= 10) {
+        // Verificar se o jogador tem 3 ou mais cartas repetidas para exibir o botão de upgrade
+        if (possuiCarta && possuiCarta.quantidade >= 3) {
             cartaHtml += `
                 <button class="upgrade-btn" style="position: absolute; bottom: 5px; left: 5px; color: white; border: none; border-radius: 50%; width: 25px; height: 25px; cursor: pointer;">
                     &#x21e7; <!-- Seta para cima -->
@@ -176,10 +176,10 @@ function exibirColecao() {
 function realizarUpgrade(nomeCarta, rankCarta) {
     const chaveCarta = nomeCarta + '-' + rankCarta;
 
-    // Verificar se o jogador tem 10 ou mais cartas repetidas
-    if (colecaoJogador[chaveCarta] && colecaoJogador[chaveCarta].quantidade >= 10) {
-        // Subtrair 10 cartas da raridade atual
-        colecaoJogador[chaveCarta].quantidade -= 10;
+    // Verificar se o jogador tem 3 ou mais cartas repetidas
+    if (colecaoJogador[chaveCarta] && colecaoJogador[chaveCarta].quantidade >= 3) {
+        // Subtrair 3 cartas da raridade atual
+        colecaoJogador[chaveCarta].quantidade -= 3;
 
         // Se a quantidade chegar a 0, remover a carta da coleção
         if (colecaoJogador[chaveCarta].quantidade === 0) {
@@ -201,7 +201,7 @@ function realizarUpgrade(nomeCarta, rankCarta) {
         // Atualizar a coleção exibida
         exibirColecao();
     } else {
-        alert('Você precisa de 10 cartas repetidas para realizar o upgrade!');
+        alert('Você precisa de 5 cartas repetidas para realizar o upgrade!');
     }
 }
 
@@ -348,10 +348,17 @@ function atualizarExibicaoDeck() {
             const img = document.createElement('img');
             img.src = carta.imagem; // Define a imagem da carta
             img.alt = carta.nome;
+
+            // Adicionar um evento de clique à imagem para exibir a carta ampliada
+            img.addEventListener('click', function() {
+                exibirCartaAmpliada(carta);
+            });
+
             slots[index].appendChild(img); // Adiciona a imagem no slot
         }
     });
 }
+
 
 // Função para adicionar carta ao deck
 function adicionarAoDeck(carta, botao) {
@@ -364,10 +371,8 @@ function adicionarAoDeck(carta, botao) {
     }
 }
 
-
 // Inicializar a exibição do deck (vazio no início)
 atualizarExibicaoDeck();
-
 
 // Eventos de clique nos botões de navegação
 document.getElementById('gacha-btn').addEventListener('click', exibirGacha);
