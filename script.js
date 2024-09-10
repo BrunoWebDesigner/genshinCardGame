@@ -1,6 +1,7 @@
 let cartas; // Variável para armazenar as cartas do JSON
 let colecaoJogador = {}; // Coleção do jogador, agora armazenada como objeto para contar repetições
 let moedas = 100000; // Moedas iniciais do jogador
+let deck = []; // Lista para armazenar o deck do jogador (máximo 7 cartas)
 
 // Carregar o arquivo JSON de cartas
 fetch('cartas.json')
@@ -92,15 +93,11 @@ function mostrarCartaAnimada(carta) {
     `;
 }
 
-// Função para resetar a animação ao mudar de tela
-function mudarTela() {
-    esconderCartaAnimada();  // Esconder a carta ao trocar de tela
-}
 
 function exibirColecao() {
     const mainContent = document.getElementById('main-content');
     mainContent.innerHTML = `
-        <h2>Sua Coleção de Cartas</h2>
+        <h2>Catalogo de Cartas</h2>
         <div id="colecao" style="display: flex; flex-wrap: wrap; gap: 20px;"></div>
     `;
     const colecaoDiv = document.getElementById('colecao');
@@ -116,8 +113,8 @@ function exibirColecao() {
         const chaveCarta = carta.nome + '-' + carta.rank;
         const possuiCarta = colecaoJogador[chaveCarta];
 
-        // Definir a transparência: 0.5 se não possuir, 1 se possuir
-        const transparencia = possuiCarta ? '1' : '0.5';
+        // Definir a transparência: 0.2 se não possuir, 1 se possuir
+        const transparencia = possuiCarta ? '1' : '0.2';
 
         // Criar o elemento da carta
         let cartaHtml = `
@@ -128,7 +125,7 @@ function exibirColecao() {
         // Mostrar o contador de cartas repetidas se o jogador possuir a carta
         if (possuiCarta && possuiCarta.quantidade > 1) {
             cartaHtml += `
-                <span class="contador" style="position: absolute; top: 5px; right: 5px; background-color: red; color: white; border-radius: 50%; padding: 5px;">
+                <span class="contador" style="position: absolute; top: 5px; right: 5px; background-color: rgb(0, 14, 68); color: white; border-radius: 50%; padding: 5px;">
                     ${possuiCarta.quantidade}
                 </span>
             `;
@@ -137,7 +134,7 @@ function exibirColecao() {
         // Verificar se o jogador tem 10 ou mais cartas repetidas para exibir o botão de upgrade
         if (possuiCarta && possuiCarta.quantidade >= 10) {
             cartaHtml += `
-                <button class="upgrade-btn" style="position: absolute; bottom: 5px; right: 5px; background-color: green; color: white; border: none; border-radius: 50%; width: 30px; height: 30px; cursor: pointer;">
+                <button class="upgrade-btn" style="position: absolute; bottom: 5px; left: 5px; color: white; border: none; border-radius: 50%; width: 25px; height: 25px; cursor: pointer;">
                     &#x21e7; <!-- Seta para cima -->
                 </button>
             `;
@@ -270,6 +267,16 @@ function exibirCartaAmpliada(carta) {
     <button id="fechar-carta" style="background-color: red; color: white; border: none; padding: 10px; margin-top: 10px; cursor: pointer; border-radius: 5px;">Fechar</button>
 `;
 
+    // Verificar se o jogador possui a carta (quantidade maior que 0)
+    const chaveCarta = carta.nome + '-' + carta.rank; // Cria uma chave única para a carta (nome + rank)
+    const possuiCarta = colecaoJogador[chaveCarta] && colecaoJogador[chaveCarta].quantidade > 0;
+
+    if (possuiCarta) {
+        cartaAmpliadaHtml += `
+        <button id="adicionar-remover-btn" style="background-color: blue; color: white; border: none; padding: 10px; margin-top: 10px; cursor: pointer; border-radius: 5px;">Adicionar</button>
+        `;
+    }
+
     cartaAmpliadaDiv.innerHTML = cartaAmpliadaHtml;
     document.body.appendChild(cartaAmpliadaDiv);
 
@@ -280,7 +287,87 @@ function exibirCartaAmpliada(carta) {
     document.getElementById('fechar-carta').addEventListener('click', function () {
         cartaAmpliadaDiv.remove(); // Remove a carta ampliada da tela
     });
+
+    // Se o jogador possui a carta, configurar o botão de adicionar/remover
+    if (possuiCarta) {
+        const adicionarRemoverBtn = document.getElementById('adicionar-remover-btn');
+        atualizarBotaoAdicionarRemover(adicionarRemoverBtn, carta); // Atualizar o botão inicialmente
+
+        adicionarRemoverBtn.addEventListener('click', function () {
+            if (adicionarRemoverBtn.textContent === 'Adicionar') {
+                adicionarAoDeck(carta, adicionarRemoverBtn);
+            } else {
+                removerDoDeck(carta, adicionarRemoverBtn);
+            }
+        });
+    }
 }
+
+// Atualizar o estado do botão com base se a carta está no deck
+function atualizarBotaoAdicionarRemover(botao, carta) {
+    const cartaNoDeck = deck.some(c => c.nome === carta.nome && c.rank === carta.rank);
+    if (cartaNoDeck) {
+        botao.textContent = 'Remover';
+        botao.style.backgroundColor = 'lightcoral'; // Botão vermelho claro
+    } else {
+        botao.textContent = 'Adicionar';
+        botao.style.backgroundColor = 'blue'; // Botão azul
+    }
+}
+
+// Função para adicionar carta ao deck
+function adicionarAoDeck(carta, botao) {
+    if (deck.length < 7) {
+        deck.push(carta); // Adiciona a carta ao deck
+        atualizarBotaoAdicionarRemover(botao, carta); // Atualiza o botão para "Remover"
+    } else {
+        alert('Limite de cartas no deck atingido!'); // Notifica o jogador
+    }
+}
+
+// Função para remover carta do deck
+function removerDoDeck(carta, botao) {
+    deck = deck.filter(c => c.nome !== carta.nome || c.rank !== carta.rank); // Remove a carta do deck
+    atualizarBotaoAdicionarRemover(botao, carta); // Atualiza o botão para "Adicionar"
+    atualizarExibicaoDeck(); // Atualiza a exibição do deck
+}
+
+// Função para atualizar a exibição das cartas no deck
+function atualizarExibicaoDeck() {
+    const deckContainer = document.getElementById('deck-container');
+    const slots = deckContainer.getElementsByClassName('deck-slot');
+
+    // Limpar slots
+    for (let i = 0; i < slots.length; i++) {
+        slots[i].innerHTML = ''; // Remove qualquer conteúdo existente
+    }
+
+    // Preencher slots com as cartas do deck
+    deck.forEach((carta, index) => {
+        if (index < slots.length) {
+            const img = document.createElement('img');
+            img.src = carta.imagem; // Define a imagem da carta
+            img.alt = carta.nome;
+            slots[index].appendChild(img); // Adiciona a imagem no slot
+        }
+    });
+}
+
+// Função para adicionar carta ao deck
+function adicionarAoDeck(carta, botao) {
+    if (deck.length < 7) {
+        deck.push(carta); // Adiciona a carta ao deck
+        atualizarBotaoAdicionarRemover(botao, carta); // Atualiza o botão para "Remover"
+        atualizarExibicaoDeck(); // Atualiza a exibição do deck
+    } else {
+        alert('Limite de cartas no deck atingido!'); // Notifica o jogador
+    }
+}
+
+
+// Inicializar a exibição do deck (vazio no início)
+atualizarExibicaoDeck();
+
 
 // Eventos de clique nos botões de navegação
 document.getElementById('gacha-btn').addEventListener('click', exibirGacha);
