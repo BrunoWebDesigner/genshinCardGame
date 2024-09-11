@@ -1,7 +1,7 @@
 
 let cartas; // Variável para armazenar as cartas do JSON
 let colecaoJogador = {}; // Coleção do jogador, agora armazenada como objeto para contar repetições
-let moedas = 100000; // Moedas iniciais do jogador
+let moedas = 50000; // Moedas iniciais do jogador
 let deck = []; // Lista para armazenar o deck do jogador (máximo 7 cartas)
 
 // Carregar o arquivo JSON de cartas e depois exibir a coleção
@@ -63,31 +63,53 @@ function gacha() {
             rankObtido = 'F';
         }
 
-        // Selecionar uma carta aleatória do rank obtido
-        let cartasRank = cartas.filter(carta => carta.rank === rankObtido);
-        let cartaObtida = cartasRank[Math.floor(Math.random() * cartasRank.length)];
+        // Aplicar a lógica de tier
+        let tierProb = Math.random();  // Gera um número aleatório para decidir o tier
+        let tierObtido;
 
-        // Adicionar à coleção do jogador ou incrementar contador de repetidas
-        const chaveCarta = cartaObtida.nome + '-' + cartaObtida.rank;
-        if (colecaoJogador[chaveCarta]) {
-            colecaoJogador[chaveCarta].quantidade += 1;
+        // Tier 5 é 2x mais raro que o tier 4
+        if (tierProb < 1 / 3) {
+            tierObtido = 5;  // 1/3 de chance de pegar tier 5
         } else {
-            colecaoJogador[chaveCarta] = { ...cartaObtida, quantidade: 1 };
+            tierObtido = 4;  // 2/3 de chance de pegar tier 4
         }
 
-        // Mostrar o resultado
-        const resultadoGacha = document.getElementById('resultado-gacha');
-        resultadoGacha.innerHTML = `Você conseguiu a carta: ${cartaObtida.nome} (${cartaObtida.rank})!`;
+        // Selecionar uma carta aleatória do rank e tier obtidos
+        let cartasRankTier = cartas.filter(carta => carta.rank === rankObtido && carta.tier === tierObtido);
+        
+        // Verificar se existem cartas disponíveis com o rank e tier
+        if (cartasRankTier.length === 0) {
+            console.error("Nenhuma carta disponível para o rank e tier selecionados.");
+            return;
+        }
+        
+        let cartaObtida = cartasRankTier[Math.floor(Math.random() * cartasRankTier.length)];
 
-        // Mostrar a carta obtida com animação
-        mostrarCartaAnimada(cartaObtida);
+    // Adicionar à coleção do jogador ou incrementar contador de repetidas
+    const chaveCarta = cartaObtida.nome + '-' + cartaObtida.rank;
+    if (colecaoJogador[chaveCarta]) {
+        colecaoJogador[chaveCarta].quantidade += 1;
+    } else {
+        colecaoJogador[chaveCarta] = { ...cartaObtida, quantidade: 1 };
+    }
 
-        // Atualizar moedas na tela
-        exibirGacha();
+    // Salvar os dados após a modificação
+    salvarDados();
+
+    // Mostrar o resultado
+    const resultadoGacha = document.getElementById('resultado-gacha');
+    resultadoGacha.innerHTML = `Você conseguiu a carta: ${cartaObtida.nome} (${cartaObtida.rank}, Tier ${cartaObtida.tier})!`;
+
+    // Mostrar a carta obtida com animação
+    mostrarCartaAnimada(cartaObtida);
+
+    // Atualizar moedas na tela
+    exibirGacha();
     } else {
         alert('Moedas insuficientes!');
     }
 }
+
 
 // Função para mostrar a carta obtida com animação
 function mostrarCartaAnimada(carta) {
@@ -232,15 +254,6 @@ function obterProximoRank(rankAtual) {
     }
 }
 
-// Função para exibir a tela de batalha (esqueleto)
-function exibirBatalha() {
-    const mainContent = document.getElementById('main-content');
-    mainContent.innerHTML = `
-        <h2>Batalha</h2>
-        <p>Em breve...</p>
-    `;
-}
-
 // Função para exibir a versão ampliada da carta
 function exibirCartaAmpliada(carta) {
     const cartaAmpliadaExistente = document.getElementById('carta-ampliada');
@@ -277,7 +290,7 @@ function exibirCartaAmpliada(carta) {
             </div>
         </div>
     </div>
-    <button id="fechar-carta" style="background-color: red; color: white; border: none; padding: 10px; margin-top: 10px; cursor: pointer; border-radius: 5px;">Fechar</button>
+    <button id="fechar-carta" style="background-color: red; color: white; border: none; padding: 10px; margin-top: 10px; cursor: pointer; border-radius: 5px; transition: background-color 0.3s;">Fechar</button>
 `;
 
     // Verificar se o jogador possui a carta (quantidade maior que 0)
@@ -297,9 +310,18 @@ function exibirCartaAmpliada(carta) {
     cartaAmpliadaDiv.style.display = 'block';
 
     // Evento para fechar a carta ampliada
-    document.getElementById('fechar-carta').addEventListener('click', function () {
+    const fecharCartaBtn = document.getElementById('fechar-carta');
+    fecharCartaBtn.addEventListener('click', function () {
         cartaAmpliadaDiv.remove(); // Remove a carta ampliada da tela
     });
+
+    // Adicionar efeito hover no botão fechar
+    fecharCartaBtn.onmouseover = function() {
+        fecharCartaBtn.style.backgroundColor = 'darkred'; // Mudar a cor de fundo para um vermelho mais escuro
+    };
+    fecharCartaBtn.onmouseout = function() {
+        fecharCartaBtn.style.backgroundColor = 'red'; // Voltar para o vermelho original
+    };
 
     // Se o jogador possui a carta, configurar o botão de adicionar/remover
     if (possuiCarta) {
@@ -316,6 +338,8 @@ function exibirCartaAmpliada(carta) {
     }
 }
 
+
+
 // Atualizar o estado do botão com base se a carta está no deck
 function atualizarBotaoAdicionarRemover(botao, carta) {
     const cartaNoDeck = deck.some(c => c.nome === carta.nome && c.rank === carta.rank);
@@ -328,21 +352,11 @@ function atualizarBotaoAdicionarRemover(botao, carta) {
     }
 }
 
-// Função para adicionar carta ao deck
-function adicionarAoDeck(carta, botao) {
-    if (deck.length < 7) {
-        deck.push(carta); // Adiciona a carta ao deck
-        atualizarBotaoAdicionarRemover(botao, carta); // Atualiza o botão para "Remover"
-    } else {
-        alert('Limite de cartas no deck atingido!'); // Notifica o jogador
-    }
-}
-
-// Função para remover carta do deck
 function removerDoDeck(carta, botao) {
     deck = deck.filter(c => c.nome !== carta.nome || c.rank !== carta.rank); // Remove a carta do deck
     atualizarBotaoAdicionarRemover(botao, carta); // Atualiza o botão para "Adicionar"
     atualizarExibicaoDeck(); // Atualiza a exibição do deck
+    salvarDados(); // Salva os dados após a modificação
 }
 
 // Função para atualizar a exibição das cartas no deck
@@ -373,19 +387,152 @@ function atualizarExibicaoDeck() {
 }
 
 
-// Função para adicionar carta ao deck
 function adicionarAoDeck(carta, botao) {
     if (deck.length < 7) {
         deck.push(carta); // Adiciona a carta ao deck
         atualizarBotaoAdicionarRemover(botao, carta); // Atualiza o botão para "Remover"
         atualizarExibicaoDeck(); // Atualiza a exibição do deck
+        salvarDados(); // Salva os dados após a modificação
     } else {
         alert('Limite de cartas no deck atingido!'); // Notifica o jogador
     }
 }
 
+
 // Inicializar a exibição do deck (vazio no início)
 atualizarExibicaoDeck();
+
+// Função para criar o botão "Remover Todas as Cartas do Deck"
+function criarBotaoRemoverTodas() {
+    const botaoRemoverTodas = document.createElement('button');
+    botaoRemoverTodas.id = 'botao-remover-todas';
+    botaoRemoverTodas.textContent = 'Limpar o Deck';
+    
+    // Estilo do botão
+    botaoRemoverTodas.style.backgroundColor = 'red';
+    botaoRemoverTodas.style.color = 'white';
+    botaoRemoverTodas.style.border = 'none';
+    botaoRemoverTodas.style.padding = '15px';
+    botaoRemoverTodas.style.cursor = 'pointer';
+    botaoRemoverTodas.style.borderRadius = '5px';
+    botaoRemoverTodas.style.position = 'fixed';
+    botaoRemoverTodas.style.bottom = '20px'; // Coloca no canto inferior
+    botaoRemoverTodas.style.right = '20px'; // Com margem de 20px das bordas
+    botaoRemoverTodas.style.zIndex = '1000'; // Garante que fique sobre outros elementos
+
+    // Estilo de hover
+    botaoRemoverTodas.onmouseover = function() {
+        botaoRemoverTodas.style.backgroundColor = 'darkred'; // Cor mais escura ao passar o mouse
+    };
+    botaoRemoverTodas.onmouseout = function() {
+        botaoRemoverTodas.style.backgroundColor = 'red'; // Volta para a cor original ao tirar o mouse
+    };
+
+    // Adiciona o evento de clique para remover todas as cartas do deck
+    botaoRemoverTodas.addEventListener('click', function () {
+        removerTodasCartasDoDeck();
+    });
+
+    // Adiciona o botão diretamente ao body, já que é fixo
+    document.body.appendChild(botaoRemoverTodas);
+}
+
+function removerTodasCartasDoDeck() {
+    // Esvaziar o array do deck
+    deck = [];
+
+    // Atualizar a exibição do deck na interface
+    atualizarExibicaoDeck();
+
+    // Atualizar todos os botões de adicionar/remover das cartas
+    document.querySelectorAll('#adicionar-remover-btn').forEach(botao => {
+        const cartaNome = botao.dataset.nome;  // Assumindo que a carta foi armazenada no atributo data
+        const cartaRank = botao.dataset.rank;  // Assumindo que o rank foi armazenado no atributo data
+        const carta = cartas.find(c => c.nome === cartaNome && c.rank === cartaRank);
+        atualizarBotaoAdicionarRemover(botao, carta);
+    });
+
+    // Salvar os dados após a modificação
+    salvarDados();
+}
+
+
+// Função para atualizar o estado do botão com base se a carta está no deck
+function atualizarBotaoAdicionarRemover(botao, carta) {
+    const cartaNoDeck = deck.some(c => c.nome === carta.nome && c.rank === carta.rank);
+    if (cartaNoDeck) {
+        botao.textContent = 'Remover';
+        botao.style.backgroundColor = 'lightcoral'; // Botão vermelho claro
+    } else {
+        botao.textContent = 'Adicionar';
+        botao.style.backgroundColor = 'blue'; // Botão azul
+    }
+}
+
+// Inicializar a exibição do deck (vazio no início)
+atualizarExibicaoDeck();
+criarBotaoRemoverTodas(); // Criar o botão de remover todas as cartas
+
+
+
+// Redirecionar para a página de batalha
+document.getElementById('batalha-btn').addEventListener('click', function() {
+    window.location.href = 'batalha.html'; // Abre uma nova página (batalha.html)
+});
+
+// Chame a função para inicializar o deck quando a página carregar
+document.addEventListener('DOMContentLoaded', function() {
+    atualizarExibicaoDeck();
+});
+
+// Função para salvar o deck e a coleção no localStorage
+function salvarDados() {
+    localStorage.setItem('colecaoJogador', JSON.stringify(colecaoJogador));
+    localStorage.setItem('deck', JSON.stringify(deck));
+}
+
+// Função para carregar o deck e a coleção do localStorage
+function carregarDados() {
+    const colecaoSalva = localStorage.getItem('colecaoJogador');
+    const deckSalvo = localStorage.getItem('deck');
+
+    if (colecaoSalva) {
+        colecaoJogador = JSON.parse(colecaoSalva);
+    }
+    if (deckSalvo) {
+        deck = JSON.parse(deckSalvo);
+        atualizarExibicaoDeck(); // Atualiza a exibição do deck quando os dados são carregados
+    }
+}
+
+// Chama a função carregarDados ao carregar a página
+document.addEventListener('DOMContentLoaded', function() {
+    carregarDados();
+    atualizarExibicaoDeck(); // Garante que o deck é exibido ao carregar a página
+});
+
+function criarBotaoReset() {
+    const botaoReset = document.getElementById('reset-btn');
+    
+    botaoReset.addEventListener('click', () => {
+        // Confirmação antes de apagar o armazenamento
+        const confirmacao = confirm('Você tem certeza de que deseja resetar o jogo? Todos os dados serão apagados.');
+
+        if (confirmacao) {
+            // Apagar o localStorage
+            localStorage.clear();
+            
+            // Notificação de sucesso (pode ser substituída por um modal ou outra notificação mais elegante)
+            alert('O jogo foi resetado com sucesso!');
+
+            // Recarregar a página ou redirecionar conforme necessário
+            location.reload(); // Recarregar a página para reiniciar o jogo
+        }
+    });
+}
+
+// Inicializa o botão de reset
+criarBotaoReset();
 
 // Eventos de clique nos botões de navegação
 document.getElementById('gacha-btn').addEventListener('click', exibirGacha);

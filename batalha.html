@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batalha - Genshin Impact Card Game</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Adicione estilos específicos para o botão de retorno */
+        #voltar-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        #voltar-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BATALHA</h1>
+        <button id="voltar-btn" onclick="window.location.href='index.html';">Voltar à Coleção</button>
+    </header>
+
+    <main>
+        <div id="campo-batalha" style="height: 400px; display: flex; justify-content: center; align-items: center; border: 1px solid black;">
+            <p>Configuração do jogo de cartas será exibida aqui.</p>
+        </div>
+    </main>
+
+    <div id="deck-container" style="position: fixed; bottom: 50px; width: 100%; display: flex; justify-content: center;">
+        <div class="deck-slot"></div>
+        <div class="deck-slot"></div>
+        <div class="deck-slot"></div>
+        <div class="deck-slot"></div>
+        <div class="deck-slot"></div>
+        <div class="deck-slot"></div>
+        <div class="deck-slot"></div>
+    </div>
+
+    <footer>
+        <p>Desenvolvido por Bruno Peres</p>
+    </footer>
+
+    <script>
+        // Aqui, você pode adicionar lógica para configurar a batalha
+        console.log("Batalha iniciada!");
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
