@@ -5,6 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Batalha - Genshin Impact Card Game</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Adicione o CSS aqui para melhorar a exibição */
+        #campo-batalha {
+            padding: 20px;
+        }
+        #oponente-botoes-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        #oponente-cartas-container {
+            margin-top: 20px;
+        }
+        .oponente-slot-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .oponente-carta {
+            text-align: center;
+        }
+        .card-buttons button {
+            margin: 2px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -14,10 +40,19 @@
 
     <main>
         <div id="campo-batalha">
-            <p>Configuração do jogo de cartas será exibida aqui.</p>
+            <!-- Os botões serão gerados aqui -->
+            <div id="oponente-botoes-container"></div>
+
+            <!-- Área onde as cartas do oponente aparecerão -->
+            <div id="oponente-cartas-container">
+                <div class="oponente-slot-container">
+                    <!-- As cartas do oponente serão exibidas aqui -->
+                </div>
+            </div>
         </div>
     </main>
 
+    <!-- Deck do jogador -->
     <div id="deck-container" style="position: fixed; bottom: 50px; width: 100%; display: flex; justify-content: center;">
         <div class="deck-slot"></div>
         <div class="deck-slot"></div>
