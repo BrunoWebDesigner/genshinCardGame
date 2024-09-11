@@ -8,7 +8,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     color: #c8c8c8;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 }
 
 header {
@@ -108,7 +108,7 @@ nav button:hover {
 
 footer {
     text-align: center;
-    padding: 10px;
+    padding: 15px;
     background-color: #17212f;
     color: white;
     position: fixed;
@@ -213,7 +213,7 @@ footer {
   #deck-container {
     display: flex;
     flex-wrap: wrap; /* Permite quebrar as cartas em múltiplas linhas */
-    gap: 10px; /* Espaço entre as cartas */
+    gap: 5px; /* Espaço entre as cartas */
     justify-content: center; /* Centraliza as cartas no contêiner */
     padding: 10px;
     background-color: #394054;
@@ -268,9 +268,9 @@ footer {
     background-color: #e74c3c; /* Cor de fundo vermelha */
     color: #fff; /* Cor do texto branca */
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 4px;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s, transform 0.3s;
@@ -283,4 +283,119 @@ footer {
 
 #reset-btn:active {
     background-color: #a93226; /* Cor de fundo ainda mais escura */
+}
+
+/* Adicione estilos específicos para o botão de retorno */
+#voltar-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#voltar-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para a div do campo de batalha */
+#campo-batalha {
+    height: 40rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    margin-bottom: 1rem; /* Espaçamento inferior para garantir que não sobreponha o conteúdo abaixo */
+    box-sizing: border-box; /* Inclui o padding e border na largura e altura totais */
+}
+
+/* Estilo para garantir que o conteúdo dentro da div seja responsivo */
+#campo-batalha p {
+    margin: 0; /* Remove margens padrão para evitar espaçamentos indesejados */
+    text-align: center; /* Centraliza o texto */
+    font-size: 1rem; /* Define um tamanho de fonte padrão */
+    line-height: 1.5; /* Define um espaçamento entre linhas */
+}
+
+.deck-slot {
+    position: relative;
+    margin: 5px;
+}
+.card-buttons {
+    position: absolute;
+    top: -120px; /* Ajuste conforme o tamanho dos botões */
+    left: 25%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card-buttons button {
+    font-size: 10px;
+    padding: 4px 8px;
+    margin: 2px;
+    width: 80%;
+}
+.card-buttons .selected {
+    background-color: #180467; /* Cor de fundo quando selecionado */
+    color: white;
+    transform: scale(1.05);
+}
+.card-buttons button:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    .card-buttons button {
+        font-size: 8px;
+        padding: 2px 4px;
+        margin: 1px;
+    }
+}
+
+@media (max-width: 679px) {
+    .card-buttons {
+        position: absolute;
+        top: -20px; /* Ajuste conforme o tamanho dos botões */
+        left: 25%;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card-buttons button {
+        font-size: 10px;
+        padding: 1px 1px;
+        margin: 1px;
+        width: 90%;
+    }
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 609px) {
+    #campo-batalha {
+        height: 31rem; /* Ajusta a altura da div para caber o conteúdo em dispositivos móveis */
+        padding: 1rem; /* Adiciona um padding para garantir que o conteúdo não fique colado nas bordas */
+    }
+
+    #campo-batalha p {
+        font-size: 0.875rem; /* Reduz o tamanho da fonte em dispositivos móveis */
+        line-height: 1.4; /* Ajusta o espaçamento entre linhas */
+    }
+}
+
+@media (max-width: 354px) {
+    #campo-batalha {
+        height: 22rem; /* Ajusta a altura da div para caber o conteúdo em dispositivos móveis */
+        padding: 1rem; /* Adiciona um padding para garantir que o conteúdo não fique colado nas bordas */
+    }
+
+    #campo-batalha p {
+        font-size: 0.875rem; /* Reduz o tamanho da fonte em dispositivos móveis */
+        line-height: 1.4; /* Ajusta o espaçamento entre linhas */
+    }
 }
