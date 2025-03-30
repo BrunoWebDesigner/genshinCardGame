@@ -430,6 +430,12 @@ footer {
     color: #333;
 }
 
+.card-stats p {
+    font-size: 8px;
+    line-height: 1.2;
+    color: #1b1b1b !important;
+}
+
 .oponente-carta .card-stats p {
     font-size: 0.7rem !important;
     margin: 2px 0 !important;
