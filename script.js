@@ -183,11 +183,14 @@ function exibirColecao() {
 // Função para enviar uma carta para o deck
 function enviarParaDeck(nomeCarta, rankCarta) {
     const carta = cartas.find(c => c.nome === nomeCarta && c.rank === rankCarta);
-    if (deck.length < 7) {
+    const cartaNoDeck = deck.some(c => c.nome === carta.nome && c.rank === carta.rank);
+    if (deck.length < 7 && !cartaNoDeck) {
         deck.push(carta);
         atualizarExibicaoDeck();
         salvarDados();
         alert(`Carta ${nomeCarta} de rank ${rankCarta} foi adicionada ao deck.`);
+    } else if (cartaNoDeck) {
+        alert(`A carta ${nomeCarta} de rank ${rankCarta} já está no deck!`);
     } else {
         alert('O deck já está cheio (máximo 7 cartas)!');
     }
@@ -337,11 +340,14 @@ function atualizarBotaoAdicionarRemover(botao, carta) {
 }
 
 function adicionarAoDeck(carta, botao) {
-    if (deck.length < 7) {
+    const cartaNoDeck = deck.some(c => c.nome === carta.nome && c.rank === carta.rank);
+    if (deck.length < 7 && !cartaNoDeck) {
         deck.push(carta);
         atualizarBotaoAdicionarRemover(botao, carta);
         atualizarExibicaoDeck();
         salvarDados();
+    } else if (cartaNoDeck) {
+        alert(`A carta ${carta.nome} de rank ${carta.rank} já está no deck!`);
     } else {
         alert('Limite de cartas no deck atingido!');
     }
@@ -349,7 +355,9 @@ function adicionarAoDeck(carta, botao) {
 
 function removerDoDeck(carta, botao) {
     deck = deck.filter(c => c.nome !== carta.nome || c.rank !== carta.rank);
-    atualizarBotaoAdicionarRemover(botao, carta);
+    if (botao) {
+        atualizarBotaoAdicionarRemover(botao, carta); // Only update button if provided
+    }
     atualizarExibicaoDeck();
     salvarDados();
 }
@@ -361,15 +369,33 @@ function atualizarExibicaoDeck() {
     for (let i = 0; i < slots.length; i++) {
         slots[i].innerHTML = '';
     }
+    // Use a Set-like approach to ensure uniqueness by nome and rank
+    const uniqueDeck = [];
+    const seen = new Set();
+    deck.forEach(carta => {
+        const key = `${carta.nome}-${carta.rank}`;
+        if (!seen.has(key)) {
+            seen.add(key);
+            uniqueDeck.push(carta);
+        }
+    });
+    deck = uniqueDeck; // Update deck to only include unique cards
     deck.forEach((carta, index) => {
         if (index < slots.length) {
-            const img = document.createElement('img');
-            img.src = carta.imagem;
-            img.alt = carta.nome;
+            const slot = slots[index];
+            slot.innerHTML = `
+                <img src="${carta.imagem}" alt="${carta.nome}" data-index="${index}">
+            `;
+            const img = slot.querySelector('img');
+            // Left-click to enlarge
             img.addEventListener('click', function() {
                 exibirCartaAmpliada(carta);
             });
-            slots[index].appendChild(img);
+            // Right-click to remove
+            img.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                removerDoDeck(carta, null);
+            });
         }
     });
 }
