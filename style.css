@@ -321,7 +321,7 @@ footer {
 
 #reset-btn {
     position: fixed;
-    top: 70px; /* Moved down below header (20px padding + content) */
+    top: 10px; /* Moved down below header (20px padding + content) */
     right: 10px;
     background-color: #e74c3c;
     color: #fff;
@@ -493,6 +493,13 @@ footer {
 }
 
 @media (max-width: 800px) {
+    #reset-btn {
+        top: 10px; /* Moved down below header (20px padding + content) */
+        right: 10px;
+        padding: 5px 10px;
+        font-size: 08px;
+        z-index: 1100; /* Above header (1000) and deck (900) */
+    }
     .card-buttons button {
         font-size: 10px;
         padding: 2px 4px;
@@ -527,6 +534,9 @@ footer {
 }
 
 @media (max-width: 609px) {
+    h1 {
+        font-size: 20px;
+    }
     #campo-batalha {
         height: 30rem;
         padding: 1rem;
@@ -541,6 +551,9 @@ footer {
 }
 
 @media (max-width: 390px) {
+    h1 {
+        font-size: 16px;
+    }
     #campo-batalha {
         height: 30rem;
         padding: 1rem;
