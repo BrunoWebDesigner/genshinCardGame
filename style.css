@@ -206,6 +206,10 @@ footer {
     background-color: rgba(0, 0, 0, 0);
 }
 
+.carta-animada p {
+    color: rgba(226, 226, 226);
+}
+
 .carta-saindo {
     animation: hide 1s ease-out forwards;
 }
@@ -317,7 +321,7 @@ footer {
 
 #reset-btn {
     position: fixed;
-    top: 10px;
+    top: 70px; /* Moved down below header (20px padding + content) */
     right: 10px;
     background-color: #e74c3c;
     color: #fff;
@@ -328,6 +332,7 @@ footer {
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s, transform 0.3s;
+    z-index: 1100; /* Above header (1000) and deck (900) */
 }
 
 #reset-btn:hover {
@@ -372,7 +377,7 @@ footer {
     text-align: center;
     font-size: 1.5rem;
     line-height: 1.5;
-    color: #394054;
+    color: #d0d0d0;
 }
 
 #oponente-botoes-container {

@@ -104,9 +104,9 @@ function mostrarCartaAnimada(carta) {
     cartaAnimadaDiv.style.display = 'block';
     cartaAnimadaDiv.innerHTML = `
         <div class="carta-animada" style="padding: 20px;">
-            <p style="color: black; text-align: center; font-size: 20px; font-weight: bold; margin-top: 10px;">Última Carta</p>
+            <p style="color: white; text-align: center; font-size: 20px; font-weight: bold; margin-top: 10px;">Última Carta</p>
             <img src="${carta.imagem}" alt="${carta.nome}" style="width: 200px; height: auto; display: block; margin: 0 auto;">
-            <p style="color: black; text-align: center; font-size: 20px; font-weight: bold; margin-top: 10px;">${carta.nome}</p>
+            <p style="color: white; text-align: center; font-size: 20px; font-weight: bold; margin-top: 10px;">${carta.nome}</p>
         </div>
     `;
 }
