@@ -21,7 +21,7 @@ function carregarDeckParaBatalha() {
 
 // Função para atualizar a exibição do deck na página (deck do jogador)
 function atualizarDeck(deck) {
-    const deckContainer = document.getElementById('deck-container');
+    const deckContainer = document.getElementById('deck-container2');
     const slots = deckContainer.getElementsByClassName('deck-slot');
     for (let slot of slots) {
         slot.innerHTML = ''; 
@@ -136,6 +136,7 @@ function updateBattleUI(result, playerCard, opponentCard, atributo) {
 }
 
 // Função para finalizar a batalha e calcular recompensas
+// Função para finalizar a batalha e calcular recompensas
 function endBattle() {
     const campoBatalha = document.getElementById('campo-batalha');
     let outcome = '';
@@ -143,7 +144,17 @@ function endBattle() {
 
     if (playerWins > opponentWins) {
         outcome = `Você venceu a batalha! (${playerWins} - ${opponentWins})`;
-        coinsEarned = Math.min(Math.floor(opponentLevel / 5) + 1, 50); // 5-25 coins for a win
+        coinsEarned = Math.min(Math.floor(opponentLevel / 5) + 3, 50); // Base coins for a win
+
+        // Special rewards
+        if (playerWins === 7 && opponentWins === 0) {
+            coinsEarned *= 7; // Multiply by 7 for a perfect 7-0 win
+            outcome += `<br>Vitória Perfeita! Recompensa especial: Moedas x7!`;
+        } else if (playerWins === 6 && opponentWins === 1) {
+            coinsEarned *= 3; // Multiply by 3 for a 6-1 win
+            outcome += `<br>Grande Vitória! Recompensa especial: Moedas x3!`;
+        }
+
         updateCoins(coinsEarned);
     } else if (playerWins < opponentWins) {
         outcome = `Você perdeu a batalha! (${playerWins} - ${opponentWins})`;
