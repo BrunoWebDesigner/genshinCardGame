@@ -1,6 +1,6 @@
 let cartas; // Variável para armazenar as cartas do JSON
 let colecaoJogador = {}; // Coleção do jogador, agora armazenada como objeto para contar repetições
-let moedas = parseInt(localStorage.getItem('moedas')) || 100; // Moedas carregadas do localStorage ou 50k iniciais
+let moedas = parseInt(localStorage.getItem('moedas')) || 100; // Moedas carregadas do localStorage ou 100 iniciais
 let deck = []; // Lista para armazenar o deck do jogador (máximo 7 cartas)
 
 // Carregar o arquivo JSON de cartas e depois exibir a coleção
@@ -145,7 +145,7 @@ function exibirColecao() {
         if (possuiCarta && possuiCarta.quantidade >= 3) {
             cartaHtml += `
                 <button class="upgrade-btn" style="position: absolute; bottom: 5px; left: 5px; color: white; border: none; border-radius: 50%; width: 25px; height: 25px; cursor: pointer;">
-                    &#x21e7;
+                    ⇧
                 </button>
             `;
         }
