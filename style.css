@@ -36,6 +36,38 @@ nav button:hover {
     background-color: #5792c0;
 }
 
+.nav-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+.nav-button:hover {
+    background-color: #0056b3;
+}
+
+.colecao-btn {
+    background-color: #2c5c81;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: white;
+    margin: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.colecao-btn:hover {
+    background-color: #5792c0;
+}
+
 #main-content {
     padding: 20px;
     text-align: center;
@@ -49,7 +81,7 @@ nav button:hover {
     width: 75px;
     height: 112.5px;
     position: relative;
-    cursor: pointer; /* Mostrar que é clicável */
+    cursor: pointer;
 }
 
 .carta img {
@@ -58,12 +90,10 @@ nav button:hover {
     object-fit: cover;
 }
 
-/* Esconder os textos no catálogo reduzido */
 .carta p {
     display: none;
 }
 
-/* Estilos para a carta em versão ampliada */
 #carta-ampliada {
     position: fixed;
     top: 50%;
@@ -73,8 +103,8 @@ nav button:hover {
     background-color: white;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    display: none; /* Mantemos escondido até clicar */
-    width: 250px; /* Aumenta o tamanho da carta ampliada */
+    display: none;
+    width: 250px;
     height: 375px;
 }
 
@@ -83,7 +113,6 @@ nav button:hover {
     height: auto;
 }
 
-/* Estilo para fechar a visualização da carta ampliada */
 #fechar-carta {
     position: absolute;
     top: 2px;
@@ -169,76 +198,79 @@ footer {
 .carta-animada {
     animation: reveal 1s ease-out forwards;
     background-color: rgba(0, 0, 0, 0);
-  }
-  
-  .carta-saindo {
+}
+
+.carta-saindo {
     animation: hide 1s ease-out forwards;
-  }
+}
 
 @keyframes reveal {
     0% {
-      opacity: 0;
-      transform: scale(0.8) rotateY(90deg); /* Começa pequeno e com rotação */
+        opacity: 0;
+        transform: scale(0.8) rotateY(90deg);
     }
     50% {
-      opacity: 0.5;
-      transform: scale(1) rotateY(10deg); /* Cresce e quase revela */
+        opacity: 0.5;
+        transform: scale(1) rotateY(10deg);
     }
     100% {
-      opacity: 1;
-      transform: scale(1) rotateY(0deg); /* Fica normal, sem rotação */
+        opacity: 1;
+        transform: scale(1) rotateY(0deg);
     }
-  }
-  
-  @keyframes hide {
+}
+
+@keyframes hide {
     0% {
-      opacity: 1;
-      transform: scale(1) rotateY(0deg); /* Estado final ao começar a esconder */
+        opacity: 1;
+        transform: scale(1) rotateY(0deg);
     }
     100% {
-      opacity: 0;
-      transform: scale(0.8) rotateY(90deg); /* Diminui e faz rotação */
+        opacity: 0;
+        transform: scale(0.8) rotateY(90deg);
     }
-  }  
-  
-  .upgrade-btn {
+}
+
+.upgrade-btn {
     background-color: rgb(55, 175, 21);
 }
 
-  .upgrade-btn:hover {
-      transform: scale(1.1);
-      background-color: rgb(64, 220, 21);
-  }
+.upgrade-btn:hover {
+    transform: scale(1.1);
+    background-color: rgb(64, 220, 21);
+}
 
-  #deck-container {
+#deck-container {
+    height: 21em;
     display: flex;
-    flex-wrap: wrap; /* Permite quebrar as cartas em múltiplas linhas */
-    gap: 5px; /* Espaço entre as cartas */
-    justify-content: center; /* Centraliza as cartas no contêiner */
-    padding: 10px;
-    background-color: #394054;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px;
+    background-color: #17212f;
 }
 
 .deck-slot {
     width: 80px;
-    height: 120px;
+    height: 180px;
     margin-top: 1em;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #394054;
+    background-color: #17212f;
     flex-grow: 1;
     padding-bottom: 10px;
-    position: relative; /* Necessário para posicionar o botão X */
+    position: relative;
     cursor: pointer;
 }
 
 .deck-slot img {
+    margin-top: 10px;
     max-width: 100%;
     max-height: 100%;
 }
 
-/* Botão de remover (X) */
 .remover-carta-btn {
     position: absolute;
     top: 5px;
@@ -265,8 +297,8 @@ footer {
     position: fixed;
     top: 10px;
     right: 10px;
-    background-color: #e74c3c; /* Cor de fundo vermelha */
-    color: #fff; /* Cor do texto branca */
+    background-color: #e74c3c;
+    color: #fff;
     border: none;
     padding: 5px 10px;
     font-size: 12px;
@@ -277,15 +309,14 @@ footer {
 }
 
 #reset-btn:hover {
-    background-color: #c0392b; /* Cor de fundo vermelha escura */
+    background-color: #c0392b;
     transform: scale(1.05);
 }
 
 #reset-btn:active {
-    background-color: #a93226; /* Cor de fundo ainda mais escura */
+    background-color: #a93226;
 }
 
-/* Adicione estilos específicos para o botão de retorno */
 #voltar-btn {
     position: absolute;
     top: 10px;
@@ -302,71 +333,115 @@ footer {
     background-color: #0056b3;
 }
 
-/* Estilo para a div do campo de batalha */
 #campo-batalha {
-    height: 40rem;
+    height: 25rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     border: 1px solid black;
-    margin-bottom: 1rem; /* Espaçamento inferior para garantir que não sobreponha o conteúdo abaixo */
-    box-sizing: border-box; /* Inclui o padding e border na largura e altura totais */
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    padding: 20px;
 }
 
-/* Estilo para garantir que o conteúdo dentro da div seja responsivo */
 #campo-batalha p {
-    margin: 0; /* Remove margens padrão para evitar espaçamentos indesejados */
-    text-align: center; /* Centraliza o texto */
-    font-size: 1rem; /* Define um tamanho de fonte padrão */
-    line-height: 1.5; /* Define um espaçamento entre linhas */
+    margin: 0;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: #394054;
 }
 
-.deck-slot {
-    position: relative;
-    margin: 5px;
-}
-.card-buttons {
-    position: absolute;
-    top: -120px; /* Ajuste conforme o tamanho dos botões */
-    left: 25%;
-    width: 50%;
+#oponente-botoes-container {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#oponente-cartas-container {
+    margin-top: 20px;
+}
+
+.oponente-slot-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px;
+}
+
+.oponente-carta {
+    display: flex;
     align-items: center;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    min-width: 200px;
+    text-align: center;
+    width: 10rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
+
+.oponente-carta.active {
+    border: 2px solid #ff0000;
+    background-color: #ffe6e6;
+}
+
+.card-image img {
+    width: 60px;
+    height: 90px;
+    margin-right: 10px;
+}
+
+.card-stats {
+    font-size: 8px;
+    line-height: 1.2;
+    color: #333;
+}
+
+.oponente-carta .card-stats p {
+    font-size: 0.7rem !important;
+    margin: 2px 0 !important;
+}
+
+.card-stats.hidden {
+    display: none;
+}
+
+.current-opponent .oponente-carta {
+    margin-top: 10px;
+}
+
 .card-buttons button {
-    font-size: 10px;
-    padding: 4px 8px;
     margin: 2px;
-    width: 80%;
+    font-size: 12px;
+    padding: 2px 10px;
+    width: 100%;
+    text-align: center;
 }
+
 .card-buttons .selected {
-    background-color: #180467; /* Cor de fundo quando selecionado */
+    background-color: #180467;
     color: white;
     transform: scale(1.05);
 }
+
 .card-buttons button:hover {
     cursor: pointer;
+    scale: 1.1;
 }
 
-/* Defina um layout flexível para os botões e faça wrap em várias linhas */
-#campo-batalha {
-    display: block;
-    flex-direction: column;
-    align-items: top;
-    gap: 10px;
-}
-
-/* Container de botões */
 #campo-batalha > div {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 20px; /* Espaço entre os botões e as cartas */
+    margin-bottom: 20px;
 }
 
-/* Botões de oponentes */
 #campo-batalha button {
     padding: 10px 15px;
     font-size: 14px;
@@ -376,82 +451,79 @@ footer {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-top: 20px;
 }
 
 #campo-batalha button:hover {
     background-color: #0056b3;
 }
 
-/* Cartas do oponente */
-.oponente-slot-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-/* Estilo para as cartas */
-.oponente-carta {
-    text-align: center;
-    width: 10rem; /* Largura padrão das cartas */
-    padding: 5px;
-    background-color: #f5f5f5;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-.oponente-carta img {
-    width: 60px;
-    height: 90px;
-}
-
 @media (max-width: 800px) {
     .card-buttons button {
-        font-size: 8px;
+        font-size: 10px;
         padding: 2px 4px;
         margin: 1px;
+    }
+    #oponente-botoes-container button {
+        margin-top: 10px;
     }
 }
 
 @media (max-width: 679px) {
     .card-buttons {
         position: absolute;
-        top: -20px; /* Ajuste conforme o tamanho dos botões */
-        left: 25%;
-        width: 50%;
+        top: -50px;
+        width: 90%;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
     .card-buttons button {
-        font-size: 10px;
+        font-size: 08px;
         padding: 1px 1px;
         margin: 1px;
         width: 90%;
     }
+    #oponente-botoes-container button {
+        margin-top: 10px;
+        width: 80px;
+        font-size: 12px;
+        padding: 4px 6px;
+    }
 }
 
-/* Responsividade para dispositivos móveis */
 @media (max-width: 609px) {
     #campo-batalha {
-        height: 31rem; /* Ajusta a altura da div para caber o conteúdo em dispositivos móveis */
-        padding: 1rem; /* Adiciona um padding para garantir que o conteúdo não fique colado nas bordas */
+        height: 25rem;
+        padding: 1rem;
     }
-
     #campo-batalha p {
-        font-size: 0.875rem; /* Reduz o tamanho da fonte em dispositivos móveis */
-        line-height: 1.4; /* Ajusta o espaçamento entre linhas */
+        font-size: 0.875rem;
+        line-height: 1.4;
+    }
+    #oponente-botoes-container button {
+        margin-top: 1px;
     }
 }
 
 @media (max-width: 354px) {
     #campo-batalha {
-        height: 22rem; /* Ajusta a altura da div para caber o conteúdo em dispositivos móveis */
-        padding: 1rem; /* Adiciona um padding para garantir que o conteúdo não fique colado nas bordas */
+        height: 22rem;
+        padding: 1rem;
     }
-
     #campo-batalha p {
-        font-size: 0.875rem; /* Reduz o tamanho da fonte em dispositivos móveis */
-        line-height: 1.4; /* Ajusta o espaçamento entre linhas */
+        font-size: 0.875rem;
+        line-height: 1.4;
+    }
+    .card-buttons {
+        position: absolute;
+        top: -50px;
+        width: 80%;
+    }
+    #oponente-botoes-container button {
+        margin-top: 2px;
+        width: 80px;
+        font-size: 10px;
+        padding: 2px 4px;
     }
 }

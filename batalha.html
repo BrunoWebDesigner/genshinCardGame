@@ -5,37 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Batalha - Genshin Impact Card Game</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Adicione o CSS aqui para melhorar a exibição */
-        #campo-batalha {
-            padding: 20px;
-        }
-        #oponente-botoes-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        #oponente-cartas-container {
-            margin-top: 20px;
-        }
-        .oponente-slot-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .oponente-carta {
-            text-align: center;
-        }
-        .card-buttons button {
-            margin: 2px;
-        }
-    </style>
 </head>
 <body>
     <header>
         <h1>BATALHA</h1>
-        <button id="voltar-btn" onclick="window.location.href='index.html';">Voltar à Coleção</button>
+        <nav>
+            <a href="./index.html" class="nav-button">Coleção</a>
+        </nav>
     </header>
 
     <main>
@@ -68,5 +44,6 @@
     </footer>
 
     <script src="batalha.js"></script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92871c9c9fbdb0ed',t:'MTc0MzMzMjUxNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
