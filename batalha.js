@@ -148,10 +148,10 @@ function endBattle() {
 
         // Special rewards
         if (playerWins === 7 && opponentWins === 0) {
-            coinsEarned *= 7; // Multiply by 7 for a perfect 7-0 win
+            coinsEarned *= 3; // Multiply by 7 for a perfect 7-0 win
             outcome += `<br>Vitória Perfeita! Recompensa especial: Moedas x7!`;
         } else if (playerWins === 6 && opponentWins === 1) {
-            coinsEarned *= 3; // Multiply by 3 for a 6-1 win
+            coinsEarned *= 2; // Multiply by 3 for a 6-1 win
             outcome += `<br>Grande Vitória! Recompensa especial: Moedas x3!`;
         }
 
