@@ -285,12 +285,30 @@ function exibirCartaAmpliada(carta) {
         cartaAmpliadaDiv.remove();
     });
 
+    // Hover effects for fechar-carta
     fecharCartaBtn.onmouseover = function() {
         fecharCartaBtn.style.backgroundColor = 'darkred';
     };
     fecharCartaBtn.onmouseout = function() {
-        OhioBarBtn.style.backgroundColor = 'red';
+        fecharCartaBtn.style.backgroundColor = 'red';
     };
+
+    // Close card when clicking outside the image and add/remove button
+    const closeCardOutside = function(e) {
+        const cartaImg = cartaAmpliadaDiv.querySelector('img');
+        const adicionarRemoverBtn = cartaAmpliadaDiv.querySelector('#adicionar-remover-btn');
+        
+        // Check if the click is outside the image and the add/remove button
+        if (!cartaImg.contains(e.target) && (!adicionarRemoverBtn || !adicionarRemoverBtn.contains(e.target))) {
+            cartaAmpliadaDiv.remove();
+            document.removeEventListener('click', closeCardOutside); // Clean up listener
+        }
+    };
+
+    // Add listener after a slight delay to avoid immediate closure from the triggering click
+    setTimeout(() => {
+        document.addEventListener('click', closeCardOutside);
+    }, 0);
 
     if (possuiCarta) {
         const adicionarRemoverBtn = document.getElementById('adicionar-remover-btn');
