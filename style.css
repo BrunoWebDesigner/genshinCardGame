@@ -361,7 +361,7 @@ footer {
 }
 
 #campo-batalha {
-    height: 30rem;
+    height: 34rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -528,7 +528,7 @@ footer {
 
 @media (max-width: 609px) {
     #campo-batalha {
-        height: 25rem;
+        height: 30rem;
         padding: 1rem;
     }
     #campo-batalha p {
@@ -542,7 +542,7 @@ footer {
 
 @media (max-width: 390px) {
     #campo-batalha {
-        height: 28rem;
+        height: 30rem;
         padding: 1rem;
     }
     #campo-batalha p {
