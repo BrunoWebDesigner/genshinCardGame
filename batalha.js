@@ -136,41 +136,43 @@ function updateBattleUI(result, playerCard, opponentCard, atributo) {
 }
 
 // Função para finalizar a batalha e calcular recompensas
-// Função para finalizar a batalha e calcular recompensas
 function endBattle() {
     const campoBatalha = document.getElementById('campo-batalha');
     let outcome = '';
     coinsEarned = 0;
 
     if (playerWins > opponentWins) {
-        outcome = `Você venceu a batalha! (${playerWins} - ${opponentWins})`;
-        coinsEarned = Math.min(Math.floor(opponentLevel / 5) + 3, 50); // Base coins for a win
-
-        // Special rewards
+        coinsEarned = Math.min(Math.floor(opponentLevel / 5) + 3, 50);
         if (playerWins === 7 && opponentWins === 0) {
-            coinsEarned *= 3; // Multiply by 3 for a perfect 7-0 win
+            coinsEarned *= 3;
             outcome += `<br>Vitória Perfeita! Recompensa especial: Moedas x3!`;
         } else if (playerWins === 6 && opponentWins === 1) {
-            coinsEarned *= 2; // Multiply by 2 for a 6-1 win
+            coinsEarned *= 2;
             outcome += `<br>Grande Vitória! Recompensa especial: Moedas x2!`;
         } else if (playerWins === 6 && opponentWins === 0) {
-            coinsEarned *= 2; // Multiply by 2 for a 6-0 win
+            coinsEarned *= 2;
             outcome += `<br>Grande Vitória! Recompensa especial: Moedas x2!`;
         }
-
         updateCoins(coinsEarned);
     } else if (playerWins < opponentWins) {
         outcome = `Você perdeu a batalha! (${playerWins} - ${opponentWins})`;
     } else {
         outcome = `Empate! (${playerWins} - ${opponentWins})`;
-        coinsEarned = Math.min(Math.floor(opponentLevel / 10), 10); // 0-10 coins for a tie
+        coinsEarned = Math.min(Math.floor(opponentLevel / 10), 10);
         updateCoins(coinsEarned);
     }
 
-    campoBatalha.innerHTML = `
+    let resultDiv = document.getElementById('battle-result');
+    if (!resultDiv) {
+        resultDiv = document.createElement('div');
+        resultDiv.id = 'battle-result';
+        campoBatalha.appendChild(resultDiv);
+    }
+    resultDiv.innerHTML = `
         <p>${outcome}</p>
         <p>Moedas ganhas: ${coinsEarned}</p>
-        <button onclick="reiniciarBatalha()">Nova Batalha</button>
+        <button onclick="oponentesPage()">Oponentes</button>
+        <button onclick="window.location.href='batalha.html?level=${opponentLevel}'">Batalhar Novamente</button>
     `;
 }
 
@@ -206,6 +208,10 @@ function iniciarBatalha(nivelOponente) {
     currentRound = 0;
     playerWins = 0;
     opponentWins = 0;
+
+    // Clear previous battle result
+    const resultDiv = document.getElementById('battle-result');
+    if (resultDiv) resultDiv.innerHTML = '';
 
     gerarCartasOponente(nivelOponente).then(cartasOponente => {
         opponentDeck = cartasOponente;
@@ -287,12 +293,23 @@ async function gerarCartasOponente(nivel) {
 }
 
 // Função para reiniciar a batalha (usando refresh da página)
-function reiniciarBatalha() {
-    location.reload(); // Recarrega a página inteira, reiniciando todos os estados e recarregando a UI
+function oponentesPage() {
+    window.location.href = 'batalha.html'; // Reset to base URL, no level parameter
 }
 
 // Inicializa quando a página carregar
 window.onload = function () {
     carregarDeckParaBatalha();
     carregarOponentes();
+
+    // Check for level in URL and auto-start battle
+    const urlParams = new URLSearchParams(window.location.search);
+    const level = parseInt(urlParams.get('level'));
+    if (level) {
+        const opponentButton = Array.from(document.querySelectorAll('#oponente-botoes-container button'))
+            .find(btn => btn.textContent === `Oponente Nível ${level}`);
+        if (opponentButton) {
+            opponentButton.click();
+        }
+    }
 };

@@ -366,8 +366,8 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
-    margin-bottom: 1rem;
+    margin-top: 4rem;
+    margin-bottom: 0.2rem;
     box-sizing: border-box;
     padding: 20px;
 }
@@ -375,9 +375,32 @@ footer {
 #campo-batalha p {
     margin: 0;
     text-align: center;
-    font-size: 1.5rem;
-    line-height: 1.5;
+    font-size: 1.2rem;
+    line-height: 1;
     color: #d0d0d0;
+}
+
+#battle-result {
+    height: 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.2rem;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+#battle-result p {
+    margin: 0;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.1;
+    color: #d0d0d0;
+}
+
+#battle-result button {
+    margin: 0 !important;
 }
 
 #oponente-botoes-container {
