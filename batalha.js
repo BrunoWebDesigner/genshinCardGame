@@ -153,6 +153,9 @@ function endBattle() {
         } else if (playerWins === 6 && opponentWins === 1) {
             coinsEarned *= 2; // Multiply by 2 for a 6-1 win
             outcome += `<br>Grande Vitória! Recompensa especial: Moedas x2!`;
+        } else if (playerWins === 6 && opponentWins === 0) {
+            coinsEarned *= 2; // Multiply by 2 for a 6-0 win
+            outcome += `<br>Grande Vitória! Recompensa especial: Moedas x2!`;
         }
 
         updateCoins(coinsEarned);
