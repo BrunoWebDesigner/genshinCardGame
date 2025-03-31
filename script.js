@@ -408,11 +408,11 @@ function criarBotaoRemoverTodas() {
     botaoRemoverTodas.style.backgroundColor = 'red';
     botaoRemoverTodas.style.color = 'white';
     botaoRemoverTodas.style.border = 'none';
-    botaoRemoverTodas.style.padding = '15px';
+    botaoRemoverTodas.style.padding = '10px';
     botaoRemoverTodas.style.cursor = 'pointer';
     botaoRemoverTodas.style.borderRadius = '5px';
     botaoRemoverTodas.style.position = 'fixed';
-    botaoRemoverTodas.style.bottom = '20px';
+    botaoRemoverTodas.style.bottom = '630px';
     botaoRemoverTodas.style.right = '20px';
     botaoRemoverTodas.style.zIndex = '1000';
 

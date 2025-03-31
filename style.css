@@ -515,6 +515,12 @@ footer {
     background-color: #0056b3;
 }
 
+footer a {
+    color: #00a6ff; /* Bright blue, matches #gacha-rodar-btn */
+    text-decoration: none; /* Removes underline */
+    transition: color 0.3s; /* Smooth color change on hover */
+}
+
 @media (max-width: 800px) {
     #reset-btn {
         top: 10px; /* Moved down below header (20px padding + content) */
