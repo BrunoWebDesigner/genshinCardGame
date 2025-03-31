@@ -560,6 +560,18 @@ footer a {
         font-size: 12px;
         padding: 4px 6px;
     }
+    .deck-slot {
+        margin: 0px;
+        scale: 0.8;
+    }
+    .deck-slot img {
+        margin-top: 0px;
+    }
+    #deck-container2 {
+        height: 12em;
+        gap: 5px;
+        padding: 0px;
+    }
 }
 
 @media (max-width: 609px) {
@@ -601,5 +613,11 @@ footer a {
         width: 80px;
         font-size: 10px;
         padding: 2px 4px;
+    }
+    #battle-result {
+        height: 14rem;
+    }
+    #campo-batalha {
+        margin-top: 4.2rem;
     }
 }
