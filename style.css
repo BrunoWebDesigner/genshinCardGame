@@ -84,8 +84,8 @@ nav button:hover {
     display: inline-block;
     margin: 10px;
     background-color: white;
-    width: 75px;
-    height: 112.5px;
+    width: 60px;
+    height: 90px;
     position: relative;
     cursor: pointer;
 }
@@ -367,7 +367,7 @@ footer {
 }
 
 #campo-batalha {
-    height: 24rem;
+    height: 34rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -552,7 +552,7 @@ footer a {
 @media (max-width: 679px) {
     .card-buttons {
         position: absolute;
-        top: -50px;
+        top: -60px;
         width: 90%;
         display: flex;
         flex-direction: column;
@@ -645,7 +645,7 @@ footer a {
     }
     .card-buttons {
         position: absolute;
-        top: -55px;
+        top: -65px;
         width: 80%;
     }
     #oponente-botoes-container button {
