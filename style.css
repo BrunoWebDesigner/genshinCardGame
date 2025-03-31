@@ -155,6 +155,7 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 4px !important;
 }
 
 #gacha-rodar-btn {
@@ -562,15 +563,19 @@ footer a {
     }
     .deck-slot {
         margin: 0px;
-        scale: 0.8;
     }
     .deck-slot img {
         margin-top: 0px;
+        scale: 0.9 !important;
     }
     #deck-container2 {
         height: 12em;
-        gap: 5px;
+        gap: 2px;
         padding: 0px;
+    }
+    #deck-container {
+        height: 13em;
+        align-items: end;
     }
 }
 
@@ -588,6 +593,15 @@ footer a {
     }
     #oponente-botoes-container button {
         margin-top: 1px;
+    }
+    #botao-remover-todas {
+        scale: 0.8;
+        right: 8px !important;
+    }
+    #deck-container {
+        height: 10em;
+        justify-content:baseline;
+        align-items: baseline;
     }
 }
 

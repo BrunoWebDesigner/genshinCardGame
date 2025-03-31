@@ -412,7 +412,7 @@ function criarBotaoRemoverTodas() {
     botaoRemoverTodas.style.cursor = 'pointer';
     botaoRemoverTodas.style.borderRadius = '5px';
     botaoRemoverTodas.style.position = 'fixed';
-    botaoRemoverTodas.style.bottom = '630px';
+    botaoRemoverTodas.style.bottom = '55px';
     botaoRemoverTodas.style.right = '20px';
     botaoRemoverTodas.style.zIndex = '1000';
 
