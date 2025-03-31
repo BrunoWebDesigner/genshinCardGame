@@ -202,6 +202,11 @@ footer {
     z-index: 1;
 }
 
+#carta-animada {
+    top: -70px;
+    scale: 0.8;
+}
+
 .carta-animada {
     animation: reveal 1s ease-out forwards;
     background-color: rgba(0, 0, 0, 0);
@@ -362,7 +367,7 @@ footer {
 }
 
 #campo-batalha {
-    height: 34rem;
+    height: 24rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -538,6 +543,10 @@ footer a {
     #oponente-botoes-container button {
         margin-top: 10px;
     }
+    #deck-container {
+        height: 13em;
+        align-items: end;
+    }
 }
 
 @media (max-width: 679px) {
@@ -563,6 +572,7 @@ footer a {
     }
     .deck-slot {
         margin: 0px;
+        width: 100px;
     }
     .deck-slot img {
         margin-top: 0px;
@@ -574,14 +584,22 @@ footer a {
         padding: 0px;
     }
     #deck-container {
-        height: 13em;
+        height: 11em;
         align-items: end;
+    }
+    .deck-slot {
+        height: 140px;
+        margin-top: 1.2em;
+        padding-bottom: 0px;
     }
 }
 
 @media (max-width: 609px) {
     h1 {
         font-size: 20px;
+    }
+    #main-content {
+        margin-top: 270px; /* Push content below fixed header and deck */
     }
     #campo-batalha {
         height: 30rem;
@@ -600,8 +618,16 @@ footer a {
     }
     #deck-container {
         height: 10em;
-        justify-content:baseline;
-        align-items: baseline;
+        align-items: end;
+    }
+    .deck-slot {
+        height: 140px;
+        margin-top: 1.2em;
+        padding-bottom: 0px;
+    }
+    #gacha-rodar-btn {
+        scale: 0.8;
+        font-size: 14px;
     }
 }
 
@@ -619,7 +645,7 @@ footer a {
     }
     .card-buttons {
         position: absolute;
-        top: -50px;
+        top: -55px;
         width: 80%;
     }
     #oponente-botoes-container button {
@@ -633,5 +659,19 @@ footer a {
     }
     #campo-batalha {
         margin-top: 4.2rem;
+    }
+    #deck-container {
+        height: 9em;
+        align-items: end;
+    }
+    .deck-slot {
+        height: 130px;
+        margin-top: 1.2em;
+        padding-bottom: 0px;
+    }
+    nav button, .nav-button {
+        padding: 5px 10px; /* Minimal padding */
+        font-size: 14px;   /* Tiny font */
+        margin: 2px;       /* Minimal margin */
     }
 }
