@@ -188,10 +188,9 @@ function enviarParaDeck(nomeCarta, rankCarta) {
 function realizarUpgrade(nomeCarta, rankCarta) {
     const chaveCarta = nomeCarta + '-' + rankCarta;
     if (colecaoJogador[chaveCarta] && colecaoJogador[chaveCarta].quantidade >= 3) {
-        colecaoJogador[chaveCarta].quantidade -= 3;
-        if (colecaoJogador[chaveCarta].quantidade === 0) {
-            delete colecaoJogador[chaveCarta];
-        }
+        // Deduct 2 if exactly 3 cards, otherwise deduct 3
+        const deductAmount = colecaoJogador[chaveCarta].quantidade === 3 ? 2 : 3;
+        colecaoJogador[chaveCarta].quantidade -= deductAmount;
 
         let novoRank = obterProximoRank(rankCarta);
         const novaChave = nomeCarta + '-' + novoRank;
@@ -205,7 +204,7 @@ function realizarUpgrade(nomeCarta, rankCarta) {
         salvarDados();
         exibirColecao();
     } else {
-        alert('Você precisa de 3 cartas repetidas para realizar o upgrade!');
+        alert('Você precisa de pelo menos 3 cartas repetidas para realizar o upgrade!');
     }
 }
 
