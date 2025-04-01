@@ -285,51 +285,90 @@ async function gerarCartasOponente(nivel) {
     try {
         const response = await fetch('cartas.json');
         const dados = await response.json();
-
         if (!dados.personagens || !Array.isArray(dados.personagens)) {
             throw new Error("O formato de cartas.json não é válido.");
         }
 
         const cartasDisponiveis = dados.personagens;
         const cartasSelecionadas = [];
-        const usedCardIds = new Set(); // Track used cards by a unique identifier
+        const usedCardIds = new Set();
 
-        // Nova distribuição para garantir Level 100 = 7 S-rank
-        const nivelFactor = nivel / 100; // 0 a 1
-        const distribuicaoRanks = {
-            F: Math.max(Math.round(7 - (nivel / 10)), 0),           // Fades out by Level 70
-            E: Math.min(Math.round((nivel / 15)), 7),               // Peaks mid-level, then fades
-            D: Math.min(Math.round((nivel / 20)), 5),               // Peaks mid-level
-            C: Math.min(Math.round((nivel / 25)), 4),               // Mid-to-high
-            B: Math.min(Math.round((nivel / 30)), 3),               // High levels
-            A: Math.min(Math.round((nivel / 40)), 3),               // Late-game
-            S: nivel === 100 ? 7 : Math.min(Math.floor(nivel / 15), 7) // All S at 100, else scales
-        };
-
-        // Ajuste especial para Level 100: só S-rank
+        // Special case for Level 100: Define exact deck with random order
         if (nivel === 100) {
-            distribuicaoRanks.F = 0;
-            distribuicaoRanks.E = 0;
-            distribuicaoRanks.D = 0;
-            distribuicaoRanks.C = 0;
-            distribuicaoRanks.B = 0;
-            distribuicaoRanks.A = 0;
-            distribuicaoRanks.S = 7;
-        }
+            const level100Deck = [
+                "Albedo-S",
+                "Alhaitham-S",
+                "Ayaka-S",
+                "Ayato-S",
+                "Cyno-S",
+                "Dehya-S",
+                "Diluc-S"
+            ];
+            // Shuffle the deck for random order
+            for (let i = level100Deck.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [level100Deck[i], level100Deck[j]] = [level100Deck[j], level100Deck[i]];
+            }
 
-        // Ajustar para exatamente 7 cartas
-        let totalCartas = Object.values(distribuicaoRanks).reduce((sum, val) => sum + val, 0);
-        if (totalCartas < 7) {
-            distribuicaoRanks.F += 7 - totalCartas; // Preenche com F se necessário
-        } else if (totalCartas > 7) {
-            for (let rank of ['F', 'E', 'D', 'C', 'B', 'A']) {
-                while (totalCartas > 7 && distribuicaoRanks[rank] > 0) {
-                    distribuicaoRanks[rank]--;
-                    totalCartas--;
+            for (const cardId of level100Deck) {
+                const [nome, rank] = cardId.split('-');
+                const card = cartasDisponiveis.find(c => 
+                    c.nome === nome && c.rank === rank
+                );
+                if (card) {
+                    cartasSelecionadas.push(card);
+                } else {
+                    console.error(`Carta não encontrada: ${cardId}`);
                 }
             }
+
+            if (cartasSelecionadas.length !== 7) {
+                throw new Error(`Deck de nível 100 inválido: ${cartasSelecionadas.length} cartas encontradas, esperado 7.`);
+            }
+            return cartasSelecionadas;
         }
 
+        // Define rank distribution based on your table
+        let distribuicaoRanks;
+        if (nivel <= 5) {
+            distribuicaoRanks = { F: 7, E: 0, D: 0, C: 0, B: 0, A: 0, S: 0 };
+        } else if (nivel <= 10) {
+            distribuicaoRanks = { F: 6, E: 1, D: 0, C: 0, B: 0, A: 0, S: 0 };
+        } else if (nivel <= 15) {
+            distribuicaoRanks = { F: 4, E: 3, D: 0, C: 0, B: 0, A: 0, S: 0 };
+        } else if (nivel <= 20) {
+            distribuicaoRanks = { F: 2, E: 4, D: 1, C: 0, B: 0, A: 0, S: 0 };
+        } else if (nivel <= 25) {
+            distribuicaoRanks = { F: 0, E: 5, D: 1, C: 1, B: 0, A: 0, S: 0 };
+        } else if (nivel <= 30) {
+            distribuicaoRanks = { F: 0, E: 4, D: 2, C: 1, B: 0, A: 0, S: 0 };
+        } else if (nivel <= 35) {
+            distribuicaoRanks = { F: 0, E: 2, D: 3, C: 2, B: 0, A: 0, S: 0 };
+        } else if (nivel <= 40) {
+            distribuicaoRanks = { F: 0, E: 1, D: 3, C: 2, B: 1, A: 0, S: 0 };
+        } else if (nivel <= 45) {
+            distribuicaoRanks = { F: 0, E: 0, D: 2, C: 3, B: 1, A: 1, S: 0 };
+        } else if (nivel <= 50) {
+            distribuicaoRanks = { F: 0, E: 0, D: 0, C: 3, B: 2, A: 1, S: 1 };
+        } else if (nivel <= 55) {
+            distribuicaoRanks = { F: 0, E: 0, D: 0, C: 2, B: 2, A: 2, S: 1 };
+        } else if (nivel <= 60) {
+            distribuicaoRanks = { F: 0, E: 0, D: 0, C: 0, B: 2, A: 3, S: 2 };
+        } else if (nivel <= 65) {
+            distribuicaoRanks = { F: 0, E: 0, D: 0, C: 0, B: 1, A: 4, S: 2 };
+        } else if (nivel <= 70) {
+            distribuicaoRanks = { F: 0, E: 0, D: 0, C: 0, B: 0, A: 4, S: 3 };
+        } else if (nivel <= 75) {
+            distribuicaoRanks = { F: 0, E: 0, D: 0, C: 0, B: 0, A: 3, S: 4 };
+        } else if (nivel <= 80) {
+            distribuicaoRanks = { F: 0, E: 0, D: 0, C: 0, B: 0, A: 2, S: 5 };
+        } else if (nivel <= 85) {
+            distribuicaoRanks = { F: 0, E: 0, D: 0, C: 0, B: 0, A: 1, S: 6 };
+        } else {
+            distribuicaoRanks = { F: 0, E: 0, D: 0, C: 0, B: 0, A: 0, S: 7 }; // 90–95
+        }
+
+        // Select cards based on distribution
         function selecionarRankAleatorio(distribuicao) {
             const ranks = Object.keys(distribuicao).filter(rank => distribuicao[rank] > 0);
             const rankSelecionado = ranks[Math.floor(Math.random() * ranks.length)];
@@ -344,11 +383,10 @@ async function gerarCartasOponente(nivel) {
             );
             if (cartasRank.length > 0) {
                 const cartaAleatoria = cartasRank[Math.floor(Math.random() * cartasRank.length)];
-                const cardId = cartaAleatoria.nome + '-' + cartaAleatoria.rank; // Unique ID
-                usedCardIds.add(cardId); // Mark as used
+                const cardId = cartaAleatoria.nome + '-' + cartaAleatoria.rank;
+                usedCardIds.add(cardId);
                 cartasSelecionadas.push(cartaAleatoria);
             } else if (cartasSelecionadas.length < 7) {
-                // If no unique cards left for this rank, relax uniqueness for remaining slots
                 const fallbackCartas = cartasDisponiveis.filter(carta => carta.rank === rankAleatorio);
                 if (fallbackCartas.length > 0) {
                     const cartaAleatoria = fallbackCartas[Math.floor(Math.random() * fallbackCartas.length)];
@@ -360,6 +398,7 @@ async function gerarCartasOponente(nivel) {
         return cartasSelecionadas;
     } catch (error) {
         console.error("Erro ao carregar cartas:", error);
+        return [];
     }
 }
 
