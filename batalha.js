@@ -178,7 +178,6 @@ async function endBattle() {
     let rewardMessage = '';
 
     if (playerWins > opponentWins) {
-        outcome = `Você venceu a batalha! (${playerWins} - ${opponentWins})`;
         coinsEarned = Math.min(Math.floor(opponentLevel / 1), 500);
         if (playerWins === 7 && opponentWins === 0) {
             coinsEarned *= 2;
