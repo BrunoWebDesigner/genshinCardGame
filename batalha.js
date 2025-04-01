@@ -155,7 +155,7 @@ function endBattle() {
         outcome = `Você perdeu a batalha! (${playerWins} - ${opponentWins})`;
     } else {
         outcome = `Empate! (${playerWins} - ${opponentWins})`;
-        coinsEarned = Math.min(Math.floor(opponentLevel / 10), 10);
+        coinsEarned = Math.min(Math.floor(opponentLevel / 5), 10);
         updateCoins(coinsEarned);
     }
 
