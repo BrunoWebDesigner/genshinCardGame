@@ -235,6 +235,7 @@ async function gerarCartasOponente(nivel) {
 
         const cartasDisponiveis = dados.personagens;
         const cartasSelecionadas = [];
+        const usedCardIds = new Set(); // Track used cards by a unique identifier
 
         // Nova distribuição para garantir Level 100 = 7 S-rank
         const nivelFactor = nivel / 100; // 0 a 1
@@ -264,7 +265,6 @@ async function gerarCartasOponente(nivel) {
         if (totalCartas < 7) {
             distribuicaoRanks.F += 7 - totalCartas; // Preenche com F se necessário
         } else if (totalCartas > 7) {
-            // Reduz ranks mais baixos primeiro
             for (let rank of ['F', 'E', 'D', 'C', 'B', 'A']) {
                 while (totalCartas > 7 && distribuicaoRanks[rank] > 0) {
                     distribuicaoRanks[rank]--;
@@ -282,10 +282,21 @@ async function gerarCartasOponente(nivel) {
 
         while (cartasSelecionadas.length < 7) {
             const rankAleatorio = selecionarRankAleatorio(distribuicaoRanks);
-            const cartasRank = cartasDisponiveis.filter(carta => carta.rank === rankAleatorio);
+            const cartasRank = cartasDisponiveis.filter(carta => 
+                carta.rank === rankAleatorio && !usedCardIds.has(carta.nome + '-' + carta.rank)
+            );
             if (cartasRank.length > 0) {
                 const cartaAleatoria = cartasRank[Math.floor(Math.random() * cartasRank.length)];
+                const cardId = cartaAleatoria.nome + '-' + cartaAleatoria.rank; // Unique ID
+                usedCardIds.add(cardId); // Mark as used
                 cartasSelecionadas.push(cartaAleatoria);
+            } else if (cartasSelecionadas.length < 7) {
+                // If no unique cards left for this rank, relax uniqueness for remaining slots
+                const fallbackCartas = cartasDisponiveis.filter(carta => carta.rank === rankAleatorio);
+                if (fallbackCartas.length > 0) {
+                    const cartaAleatoria = fallbackCartas[Math.floor(Math.random() * fallbackCartas.length)];
+                    cartasSelecionadas.push(cartaAleatoria);
+                }
             }
         }
 
