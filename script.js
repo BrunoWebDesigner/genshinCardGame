@@ -24,6 +24,7 @@ function exibirGacha() {
         <div id="resultado-gacha"></div>
     `;
     document.getElementById('gacha-rodar-btn').addEventListener('click', gacha);
+    document.getElementById('coin-amount').textContent = moedas; // Add this
 }
 
 // Função para realizar o gacha
@@ -31,8 +32,6 @@ function gacha() {
     const custoPacote = 10;
     if (moedas >= custoPacote) {
         moedas -= custoPacote;
-
-        // Definir as probabilidades de obtenção de rank
         let rankProb = Math.random();
         let rankObtido;
 
@@ -52,7 +51,6 @@ function gacha() {
             rankObtido = 'F';
         }
 
-        // Aplicar a lógica de tier
         let tierProb = Math.random();
         let tierObtido;
 
@@ -62,17 +60,13 @@ function gacha() {
             tierObtido = 4;
         }
 
-        // Selecionar uma carta aleatória do rank e tier obtidos
         let cartasRankTier = cartas.filter(carta => carta.rank === rankObtido && carta.tier === tierObtido);
-        
         if (cartasRankTier.length === 0) {
             console.error("Nenhuma carta disponível para o rank e tier selecionados.");
             return;
         }
         
         let cartaObtida = cartasRankTier[Math.floor(Math.random() * cartasRankTier.length)];
-
-        // Adicionar à coleção do jogador ou incrementar contador de repetidas
         const chaveCarta = cartaObtida.nome + '-' + cartaObtida.rank;
         if (colecaoJogador[chaveCarta]) {
             colecaoJogador[chaveCarta].quantidade += 1;
@@ -80,18 +74,12 @@ function gacha() {
             colecaoJogador[chaveCarta] = { ...cartaObtida, quantidade: 1 };
         }
 
-        // Salvar os dados após a modificação
         salvarDados();
-
-        // Mostrar o resultado
         const resultadoGacha = document.getElementById('resultado-gacha');
         resultadoGacha.innerHTML = `Você conseguiu a carta: ${cartaObtida.nome} (${cartaObtida.rank}, Tier ${cartaObtida.tier})!`;
-
-        // Mostrar a carta obtida com animação
         mostrarCartaAnimada(cartaObtida);
-
-        // Atualizar moedas na tela
         exibirGacha();
+        document.getElementById('coin-amount').textContent = moedas; // Add this
     } else {
         alert('Moedas insuficientes!');
     }
@@ -465,6 +453,7 @@ function carregarDados() {
     if (moedasSalvas) {
         moedas = parseInt(moedasSalvas);
     }
+    document.getElementById('coin-amount').textContent = moedas; // Add this
 }
 
 // Função para criar o botão de reset

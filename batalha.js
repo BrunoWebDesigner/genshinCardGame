@@ -7,6 +7,11 @@ let opponentWins = 0;
 let opponentLevel = 0;
 let coinsEarned = 0;
 
+function updateCoinDisplay() {
+    const moedas = parseInt(localStorage.getItem('moedas')) || 0;
+    document.getElementById('coin-amount').textContent = moedas;
+}
+
 // Função para carregar o deck do localStorage
 function carregarDeckParaBatalha() {
     const deckSalvo = localStorage.getItem('deck');
@@ -178,6 +183,7 @@ function updateCoins(amount) {
     let moedas = parseInt(localStorage.getItem('moedas')) || 0;
     moedas += amount;
     localStorage.setItem('moedas', moedas);
+    updateCoinDisplay(); // Add this
 }
 
 // Função para carregar oponentes no campo de batalha
@@ -298,8 +304,8 @@ function oponentesPage() {
 window.onload = function () {
     carregarDeckParaBatalha();
     carregarOponentes();
+    updateCoinDisplay(); // Add this
 
-    // Check for level in URL and auto-start battle
     const urlParams = new URLSearchParams(window.location.search);
     const level = parseInt(urlParams.get('level'));
     if (level) {
