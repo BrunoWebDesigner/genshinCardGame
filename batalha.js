@@ -142,16 +142,13 @@ function endBattle() {
     coinsEarned = 0;
 
     if (playerWins > opponentWins) {
-        coinsEarned = Math.min(Math.floor(opponentLevel / 5) + 3, 50);
+        coinsEarned = Math.min(Math.floor(opponentLevel / 1), 500);
         if (playerWins === 7 && opponentWins === 0) {
-            coinsEarned *= 3;
-            outcome += `<br>Vitória Perfeita! Recompensa especial: Moedas x3!`;
-        } else if (playerWins === 6 && opponentWins === 1) {
             coinsEarned *= 2;
-            outcome += `<br>Grande Vitória! Recompensa especial: Moedas x2!`;
-        } else if (playerWins === 6 && opponentWins === 0) {
-            coinsEarned *= 2;
-            outcome += `<br>Grande Vitória! Recompensa especial: Moedas x2!`;
+            outcome += `<br>Vitória Perfeita! Recompensa especial: Moedas x2!`;
+        } else {
+            coinsEarned *= 1;
+            outcome += `<br>Vitória!`;
         }
         updateCoins(coinsEarned);
     } else if (playerWins < opponentWins) {
