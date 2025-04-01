@@ -569,6 +569,30 @@ footer a {
     text-align: center;
 }
 
+#oponente-botoes-container button {
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: #007bff; /* Default blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#oponente-botoes-container button:hover {
+    background-color: #0056b3; /* Default hover */
+}
+
+/* Style for beaten opponents (with checkmark) */
+#oponente-botoes-container button.beaten {
+    background-color: #003087; /* Darker blue */
+}
+
+#oponente-botoes-container button.beaten:hover {
+    background-color: #00215e; /* Even darker blue on hover */
+}
+
 @media (max-width: 800px) {
     #reset-btn {
         top: 10px; /* Moved down below header (20px padding + content) */

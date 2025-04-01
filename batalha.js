@@ -249,6 +249,9 @@ function carregarOponentes() {
         const isBeaten = beatenLevels.includes(nivel);
         const botao = document.createElement('button');
         botao.textContent = `Oponente Nível ${nivel}${isBeaten ? ' ✓' : ''}`;
+        if (isBeaten) {
+            botao.classList.add('beaten'); // Add class for beaten opponents
+        }
         botao.onclick = () => iniciarBatalha(nivel);
         oponenteBotoesContainer.appendChild(botao);
     }
