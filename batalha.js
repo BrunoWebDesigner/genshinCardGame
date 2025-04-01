@@ -301,7 +301,7 @@ async function gerarCartasOponente(nivel) {
                 "Ayato-S",
                 "Cyno-S",
                 "Dehya-S",
-                "Diluc-S"
+                "Eula-S"
             ];
             // Shuffle the deck for random order
             for (let i = level100Deck.length - 1; i > 0; i--) {
