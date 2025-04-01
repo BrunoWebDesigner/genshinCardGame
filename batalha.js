@@ -7,6 +7,36 @@ let opponentWins = 0;
 let opponentLevel = 0;
 let coinsEarned = 0;
 
+async function getRandomCardByRank(rank) {
+    try {
+        const response = await fetch('cartas.json');
+        const dados = await response.json();
+        const cartasRank = dados.personagens.filter(carta => carta.rank === rank);
+        if (cartasRank.length === 0) {
+            console.error(`Nenhuma carta disponível para o rank ${rank}.`);
+            return null;
+        }
+        return cartasRank[Math.floor(Math.random() * cartasRank.length)];
+    } catch (error) {
+        console.error("Erro ao carregar cartas para recompensa:", error);
+        return null;
+    }
+}
+
+function determineRewardRank(level) {
+    const ranks = ['E', 'D', 'C', 'B', 'A', 'S'];
+    // Scale from level 5 (E) to level 100 (S)
+    const minLevel = 5;
+    const maxLevel = 100;
+    const levelRange = maxLevel - minLevel;
+    const rankStep = levelRange / (ranks.length - 1); // ~19 levels per rank
+
+    // Clamp level to valid range and calculate rank index
+    const clampedLevel = Math.max(minLevel, Math.min(maxLevel, level));
+    const rankIndex = Math.min(ranks.length - 1, Math.floor((clampedLevel - minLevel) / rankStep));
+    return ranks[rankIndex];
+}
+
 function updateCoinDisplay() {
     const moedas = parseInt(localStorage.getItem('moedas')) || 0;
     document.getElementById('coin-amount').textContent = moedas;
@@ -141,10 +171,11 @@ function updateBattleUI(result, playerCard, opponentCard, atributo) {
 }
 
 // Função para finalizar a batalha e calcular recompensas
-function endBattle() {
+async function endBattle() {
     const campoBatalha = document.getElementById('campo-batalha');
     let outcome = '';
     coinsEarned = 0;
+    let rewardMessage = '';
 
     if (playerWins > opponentWins) {
         outcome = `Você venceu a batalha! (${playerWins} - ${opponentWins})`;
@@ -159,6 +190,21 @@ function endBattle() {
         if (!beatenLevels.includes(opponentLevel)) {
             beatenLevels.push(opponentLevel);
             localStorage.setItem('beatenLevels', JSON.stringify(beatenLevels));
+
+            // Award a random card based on opponent level
+            const rank = determineRewardRank(opponentLevel);
+            const rewardCard = await getRandomCardByRank(rank);
+            if (rewardCard) {
+                const chaveCarta = rewardCard.nome + '-' + rewardCard.rank;
+                let colecaoJogador = JSON.parse(localStorage.getItem('colecaoJogador')) || {};
+                if (colecaoJogador[chaveCarta]) {
+                    colecaoJogador[chaveCarta].quantidade += 1;
+                } else {
+                    colecaoJogador[chaveCarta] = { ...rewardCard, quantidade: 1 };
+                }
+                localStorage.setItem('colecaoJogador', JSON.stringify(colecaoJogador));
+                rewardMessage = `<br>Recompensa por primeira vitória: ${rewardCard.nome} (${rewardCard.rank})!`;
+            }
         }
     } else if (playerWins < opponentWins) {
         outcome = `Você perdeu a batalha! (${playerWins} - ${opponentWins})`;
@@ -175,7 +221,7 @@ function endBattle() {
         campoBatalha.appendChild(resultDiv);
     }
     resultDiv.innerHTML = `
-        <p>${outcome}</p>
+        <p>${outcome}${rewardMessage}</p>
         <p>Moedas ganhas: ${coinsEarned}</p>
         <button onclick="oponentesPage()">Oponentes</button>
         <button onclick="console.log('Battling again at level ${opponentLevel}'); window.location.href='batalha.html?level=${opponentLevel}'">Batalhar Novamente</button>
