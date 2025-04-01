@@ -561,6 +561,14 @@ footer a {
     display: inline; /* Show only if ✓ is in text */
 }
 
+/* Notification styles */
+.notification {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    max-width: 80%;
+    text-align: center;
+}
+
 @media (max-width: 800px) {
     #reset-btn {
         top: 10px; /* Moved down below header (20px padding + content) */

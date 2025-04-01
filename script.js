@@ -3,6 +3,52 @@ let colecaoJogador = {}; // Coleção do jogador, agora armazenada como objeto p
 let moedas = parseInt(localStorage.getItem('moedas')) || 100; // Moedas carregadas do localStorage ou 100 iniciais
 let deck = []; // Lista para armazenar o deck do jogador (máximo 7 cartas)
 
+function showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.textContent = message;
+    notification.style.position = 'fixed';
+    notification.style.top = '20px';
+    notification.style.left = '50%';
+    notification.style.transform = 'translateX(-50%)';
+    notification.style.padding = '10px 20px';
+    notification.style.borderRadius = '5px';
+    notification.style.color = '#fff';
+    notification.style.zIndex = '2000';
+    notification.style.opacity = '0';
+    notification.style.transition = 'opacity 0.5s ease-in-out';
+
+    // Style based on type
+    switch (type) {
+        case 'success':
+            notification.style.backgroundColor = '#28a745'; // Green
+            break;
+        case 'warning':
+            notification.style.backgroundColor = '#ffc107'; // Yellow
+            notification.style.color = '#333'; // Darker text for contrast
+            break;
+        case 'error':
+            notification.style.backgroundColor = '#dc3545'; // Red
+            break;
+        default:
+            notification.style.backgroundColor = '#007bff'; // Blue
+    }
+
+    document.body.appendChild(notification);
+
+    // Fade in
+    setTimeout(() => {
+        notification.style.opacity = '1';
+    }, 10);
+
+    // Fade out and remove after 3 seconds
+    setTimeout(() => {
+        notification.style.opacity = '0';
+        setTimeout(() => {
+            notification.remove();
+        }, 500); // Wait for fade-out animation
+    }, 3000);
+}
+
 // Carregar o arquivo JSON de cartas e depois exibir a coleção
 fetch('cartas.json')
     .then(response => response.json())
@@ -169,6 +215,7 @@ function exibirColecao() {
 }
 
 // Função para enviar uma carta para o deck
+// Função para enviar uma carta para o deck
 function enviarParaDeck(nomeCarta, rankCarta) {
     const carta = cartas.find(c => c.nome === nomeCarta && c.rank === rankCarta);
     const cartaNoDeck = deck.some(c => c.nome === carta.nome && c.rank === carta.rank);
@@ -176,11 +223,11 @@ function enviarParaDeck(nomeCarta, rankCarta) {
         deck.push(carta);
         atualizarExibicaoDeck();
         salvarDados();
-        alert(`Carta ${nomeCarta} de rank ${rankCarta} foi adicionada ao deck.`);
+        showNotification(`Carta ${nomeCarta} de rank ${rankCarta} foi adicionada ao deck.`, 'success');
     } else if (cartaNoDeck) {
-        alert(`A carta ${nomeCarta} de rank ${rankCarta} já está no deck!`);
+        showNotification(`A carta ${nomeCarta} de rank ${rankCarta} já está no deck!`, 'warning');
     } else {
-        alert('O deck já está cheio (máximo 7 cartas)!');
+        showNotification('O deck já está cheio (máximo 7 cartas)!', 'error');
     }
 }
 
