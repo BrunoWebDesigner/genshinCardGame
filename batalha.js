@@ -147,20 +147,30 @@ function endBattle() {
     coinsEarned = 0;
 
     if (playerWins > opponentWins) {
-        coinsEarned = Math.min(Math.floor(opponentLevel / 1), 500);
+        outcome = `Você venceu a batalha! (${playerWins} - ${opponentWins})`;
+        coinsEarned = Math.min(Math.floor(opponentLevel / 5) + 3, 50);
         if (playerWins === 7 && opponentWins === 0) {
+            coinsEarned *= 3;
+            outcome += `<br>Vitória Perfeita! Recompensa especial: Moedas x3!`;
+        } else if (playerWins === 6 && opponentWins === 1) {
             coinsEarned *= 2;
-            outcome += `<br>Vitória Perfeita! Recompensa especial: Moedas x2!`;
-        } else {
-            coinsEarned *= 1;
-            outcome += `<br>Vitória!`;
+            outcome += `<br>Grande Vitória! Recompensa especial: Moedas x2!`;
+        } else if (playerWins === 6 && opponentWins === 0) {
+            coinsEarned *= 2;
+            outcome += `<br>Grande Vitória! Recompensa especial: Moedas x2!`;
         }
         updateCoins(coinsEarned);
+
+        const beatenLevels = JSON.parse(localStorage.getItem('beatenLevels')) || [];
+        if (!beatenLevels.includes(opponentLevel)) {
+            beatenLevels.push(opponentLevel);
+            localStorage.setItem('beatenLevels', JSON.stringify(beatenLevels));
+        }
     } else if (playerWins < opponentWins) {
         outcome = `Você perdeu a batalha! (${playerWins} - ${opponentWins})`;
     } else {
         outcome = `Empate! (${playerWins} - ${opponentWins})`;
-        coinsEarned = Math.min(Math.floor(opponentLevel / 5), 10);
+        coinsEarned = Math.min(Math.floor(opponentLevel / 10), 10);
         updateCoins(coinsEarned);
     }
 
@@ -174,7 +184,7 @@ function endBattle() {
         <p>${outcome}</p>
         <p>Moedas ganhas: ${coinsEarned}</p>
         <button onclick="oponentesPage()">Oponentes</button>
-        <button onclick="window.location.href='batalha.html?level=${opponentLevel}'">Batalhar Novamente</button>
+        <button onclick="console.log('Battling again at level ${opponentLevel}'); window.location.href='batalha.html?level=${opponentLevel}'">Batalhar Novamente</button>
     `;
 }
 
@@ -191,10 +201,14 @@ function carregarOponentes() {
     const oponenteBotoesContainer = document.getElementById('oponente-botoes-container');
     oponenteBotoesContainer.innerHTML = '';
 
+    // Load beaten levels from localStorage
+    const beatenLevels = JSON.parse(localStorage.getItem('beatenLevels')) || [];
+
     for (let i = 1; i <= 20; i++) {
         const nivel = Math.ceil(i * 5);
+        const isBeaten = beatenLevels.includes(nivel);
         const botao = document.createElement('button');
-        botao.textContent = `Oponente Nível ${nivel}`;
+        botao.textContent = `Oponente Nível ${nivel}${isBeaten ? ' ✓' : ''}`;
         botao.onclick = () => iniciarBatalha(nivel);
         oponenteBotoesContainer.appendChild(botao);
     }
@@ -308,22 +322,26 @@ async function gerarCartasOponente(nivel) {
 
 // Função para reiniciar a batalha (usando refresh da página)
 function oponentesPage() {
-    window.location.href = 'batalha.html'; // Reset to base URL, no level parameter
+    window.location.href = 'batalha.html';
+    carregarOponentes(); // Ensure list updates (though reload handles this)
 }
 
 // Inicializa quando a página carregar
 window.onload = function () {
     carregarDeckParaBatalha();
     carregarOponentes();
-    updateCoinDisplay(); // Add this
+    updateCoinDisplay();
 
     const urlParams = new URLSearchParams(window.location.search);
     const level = parseInt(urlParams.get('level'));
     if (level) {
+        console.log(`Auto-starting battle for level ${level}`);
         const opponentButton = Array.from(document.querySelectorAll('#oponente-botoes-container button'))
-            .find(btn => btn.textContent === `Oponente Nível ${level}`);
+            .find(btn => btn.textContent.startsWith(`Oponente Nível ${level}`));
         if (opponentButton) {
             opponentButton.click();
+        } else {
+            console.error(`No button found for level ${level}`);
         }
     }
 };

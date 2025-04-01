@@ -546,6 +546,21 @@ footer a {
     font-weight: bold;
 }
 
+#oponente-botoes-container button {
+    position: relative;
+}
+
+#oponente-botoes-container button::after {
+    content: '✓';
+    display: none; /* Hidden by default */
+    color: #00ff00; /* Green checkmark */
+    margin-left: 5px;
+}
+
+#oponente-botoes-container button:contains('✓')::after {
+    display: inline; /* Show only if ✓ is in text */
+}
+
 @media (max-width: 800px) {
     #reset-btn {
         top: 10px; /* Moved down below header (20px padding + content) */
