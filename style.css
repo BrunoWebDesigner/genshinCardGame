@@ -553,6 +553,9 @@ footer a {
 }
 
 @media (max-width: 679px) {
+    #main-content {
+        margin-top: 250px; /* Push content below fixed header and deck */
+    }
     .card-buttons {
         position: absolute;
         top: -60px;
@@ -673,9 +676,7 @@ footer a {
     #battle-result {
         height: 14rem;
     }
-    #campo-batalha {
 
-    }
     #deck-container {
         height: 9em;
         align-items: end;
