@@ -148,16 +148,10 @@ function endBattle() {
 
     if (playerWins > opponentWins) {
         outcome = `Você venceu a batalha! (${playerWins} - ${opponentWins})`;
-        coinsEarned = Math.min(Math.floor(opponentLevel / 5) + 3, 50);
+        coinsEarned = Math.min(Math.floor(opponentLevel / 1), 500);
         if (playerWins === 7 && opponentWins === 0) {
-            coinsEarned *= 3;
-            outcome += `<br>Vitória Perfeita! Recompensa especial: Moedas x3!`;
-        } else if (playerWins === 6 && opponentWins === 1) {
             coinsEarned *= 2;
-            outcome += `<br>Grande Vitória! Recompensa especial: Moedas x2!`;
-        } else if (playerWins === 6 && opponentWins === 0) {
-            coinsEarned *= 2;
-            outcome += `<br>Grande Vitória! Recompensa especial: Moedas x2!`;
+            outcome += `<br>Vitória Perfeita! Recompensa especial: Moedas x2!`;
         }
         updateCoins(coinsEarned);
 
@@ -170,7 +164,7 @@ function endBattle() {
         outcome = `Você perdeu a batalha! (${playerWins} - ${opponentWins})`;
     } else {
         outcome = `Empate! (${playerWins} - ${opponentWins})`;
-        coinsEarned = Math.min(Math.floor(opponentLevel / 10), 10);
+        coinsEarned = Math.min(Math.floor(opponentLevel / 5), 10);
         updateCoins(coinsEarned);
     }
 

@@ -553,7 +553,7 @@ footer a {
 #oponente-botoes-container button::after {
     content: '✓';
     display: none; /* Hidden by default */
-    color: #00ff00; /* Green checkmark */
+    color: #00ff00 !important; /* Green checkmark */
     margin-left: 5px;
 }
 
