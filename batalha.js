@@ -295,13 +295,13 @@ async function gerarCartasOponente(nivel) {
         // Special case for Level 100: Define exact deck with random order
         if (nivel === 100) {
             const level100Deck = [
-                "Albedo-S",
-                "Alhaitham-S",
-                "Ayaka-S",
-                "Ayato-S",
-                "Cyno-S",
-                "Dehya-S",
-                "Eula-S"
+                "Venti-S",
+                "Zhongli-S",
+                "Raiden-S",
+                "Nahida-S",
+                "Furina-S",
+                "Mavuika-S",
+                "Hutao-S"
             ];
             // Shuffle the deck for random order
             for (let i = level100Deck.length - 1; i > 0; i--) {

@@ -2099,6 +2099,66 @@
             "atq": 223,
             "def": 546,
             "prof": 1012
+        },
+        {
+            "nome": "Venti",
+            "rank": "S",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/venti.png",
+            "hp": 11000,
+            "atq": 260,
+            "def": 670,
+            "prof": 2000
+        },
+        {
+            "nome": "Zhongli",
+            "rank": "S",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/zhong.png",
+            "hp": 20001,
+            "atq": 260,
+            "def": 740,
+            "prof": 970
+        },
+        {
+            "nome": "Raiden",
+            "rank": "S",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/shogun.png",
+            "hp": 12910,
+            "atq": 1001,
+            "def": 790,
+            "prof": 1010
+        },
+        {
+            "nome": "Nahida",
+            "rank": "S",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/nahida.png",
+            "hp": 10360,
+            "atq": 300,
+            "def": 630,
+            "prof": 2001
+        },
+        {
+            "nome": "Furina",
+            "rank": "S",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/furina.png",
+            "hp": 20000,
+            "atq": 250,
+            "def": 700,
+            "prof": 1029
+        },
+        {
+            "nome": "Mavuika",
+            "rank": "S",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/mavuika.png",
+            "hp": 12560,
+            "atq": 1000,
+            "def": 800,
+            "prof": 1031
         }
     ]
 }
