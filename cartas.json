@@ -1679,6 +1679,426 @@
             "atq": 244,
             "def": 593,
             "prof": 1003
+        },
+        {
+            "nome": "Ganyu",
+            "rank": "F",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/ganyu1.png",
+            "hp": 1978,
+            "atq": 67,
+            "def": 127,
+            "prof": 561
+        },
+        {
+            "nome": "Ganyu",
+            "rank": "E",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/ganyu2.png",
+            "hp": 3938,
+            "atq": 134,
+            "def": 253,
+            "prof": 630
+        },
+        {
+            "nome": "Ganyu",
+            "rank": "D",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/ganyu3.png",
+            "hp": 5066,
+            "atq": 173,
+            "def": 325,
+            "prof": 699
+        },
+        {
+            "nome": "Ganyu",
+            "rank": "C",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/ganyu4.png",
+            "hp": 6355,
+            "atq": 217,
+            "def": 408,
+            "prof": 768
+        },
+        {
+            "nome": "Ganyu",
+            "rank": "B",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/ganyu5.png",
+            "hp": 7495,
+            "atq": 256,
+            "def": 482,
+            "prof": 837
+        },
+        {
+            "nome": "Ganyu",
+            "rank": "A",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/ganyu6.png",
+            "hp": 8643,
+            "atq": 295,
+            "def": 556,
+            "prof": 906
+        },
+        {
+            "nome": "Ganyu",
+            "rank": "S",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/ganyu7.png",
+            "hp": 9796,
+            "atq": 334,
+            "def": 630,
+            "prof": 975
+        },
+        {
+            "nome": "Hutao",
+            "rank": "F",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/hutao1.png",
+            "hp": 3140,
+            "atq": 21,
+            "def": 176,
+            "prof": 583
+        },
+        {
+            "nome": "Hutao",
+            "rank": "E",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/hutao2.png",
+            "hp": 6252,
+            "atq": 42,
+            "def": 352,
+            "prof": 652
+        },
+        {
+            "nome": "Hutao",
+            "rank": "D",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/hutao3.png",
+            "hp": 8042,
+            "atq": 55,
+            "def": 453,
+            "prof": 721
+        },
+        {
+            "nome": "Hutao",
+            "rank": "C",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/hutao4.png",
+            "hp": 10088,
+            "atq": 69,
+            "def": 568,
+            "prof": 790
+        },
+        {
+            "nome": "Hutao",
+            "rank": "B",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/hutao5.png",
+            "hp": 11899,
+            "atq": 81,
+            "def": 670,
+            "prof": 859
+        },
+        {
+            "nome": "Hutao",
+            "rank": "A",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/hutao6.png",
+            "hp": 13721,
+            "atq": 93,
+            "def": 773,
+            "prof": 928
+        },
+        {
+            "nome": "Hutao",
+            "rank": "S",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/hutao7.png",
+            "hp": 15552,
+            "atq": 106,
+            "def": 876,
+            "prof": 997
+        },
+        {
+            "nome": "Itto",
+            "rank": "F",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/itto1.png",
+            "hp": 2596,
+            "atq": 45,
+            "def": 193,
+            "prof": 549
+        },
+        {
+            "nome": "Itto",
+            "rank": "E",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/itto2.png",
+            "hp": 5169,
+            "atq": 91,
+            "def": 385,
+            "prof": 618
+        },
+        {
+            "nome": "Itto",
+            "rank": "D",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/itto3.png",
+            "hp": 6649,
+            "atq": 117,
+            "def": 495,
+            "prof": 687
+        },
+        {
+            "nome": "Itto",
+            "rank": "C",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/itto4.png",
+            "hp": 8341,
+            "atq": 147,
+            "def": 622,
+            "prof": 756
+        },
+        {
+            "nome": "Itto",
+            "rank": "B",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/itto5.png",
+            "hp": 9837,
+            "atq": 173,
+            "def": 733,
+            "prof": 825
+        },
+        {
+            "nome": "Itto",
+            "rank": "A",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/itto6.png",
+            "hp": 11344,
+            "atq": 200,
+            "def": 846,
+            "prof": 894
+        },
+        {
+            "nome": "Itto",
+            "rank": "S",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/itto7.png",
+            "hp": 12858,
+            "atq": 227,
+            "def": 959,
+            "prof": 963
+        },
+        {
+            "nome": "Jean",
+            "rank": "F",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/jean1.png",
+            "hp": 2967,
+            "atq": 48,
+            "def": 155,
+            "prof": 607
+        },
+        {
+            "nome": "Jean",
+            "rank": "E",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/jean2.png",
+            "hp": 5908,
+            "atq": 96,
+            "def": 308,
+            "prof": 676
+        },
+        {
+            "nome": "Jean",
+            "rank": "D",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/jean3.png",
+            "hp": 7599,
+            "atq": 123,
+            "def": 397,
+            "prof": 745
+        },
+        {
+            "nome": "Jean",
+            "rank": "C",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/jean4.png",
+            "hp": 9532,
+            "atq": 155,
+            "def": 498,
+            "prof": 814
+        },
+        {
+            "nome": "Jean",
+            "rank": "B",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/jean5.png",
+            "hp": 11243,
+            "atq": 182,
+            "def": 588,
+            "prof": 883
+        },
+        {
+            "nome": "Jean",
+            "rank": "A",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/jean6.png",
+            "hp": 12965,
+            "atq": 211,
+            "def": 678,
+            "prof": 952
+        },
+        {
+            "nome": "Jean",
+            "rank": "S",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/jean7.png",
+            "hp": 14695,
+            "atq": 239,
+            "def": 768,
+            "prof": 1021
+        },
+        {
+            "nome": "Kaveh",
+            "rank": "F",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kaveh1.png",
+            "hp": 2576,
+            "atq": 50,
+            "def": 161,
+            "prof": 596
+        },
+        {
+            "nome": "Kaveh",
+            "rank": "E",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kaveh2.png",
+            "hp": 4981,
+            "atq": 97,
+            "def": 312,
+            "prof": 665
+        },
+        {
+            "nome": "Kaveh",
+            "rank": "D",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kaveh3.png",
+            "hp": 6342,
+            "atq": 123,
+            "def": 398,
+            "prof": 734
+        },
+        {
+            "nome": "Kaveh",
+            "rank": "C",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kaveh4.png",
+            "hp": 7880,
+            "atq": 153,
+            "def": 494,
+            "prof": 803
+        },
+        {
+            "nome": "Kaveh",
+            "rank": "B",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kaveh5.png",
+            "hp": 9240,
+            "atq": 180,
+            "def": 579,
+            "prof": 872
+        },
+        {
+            "nome": "Kaveh",
+            "rank": "A",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kaveh6.png",
+            "hp": 10601,
+            "atq": 207,
+            "def": 665,
+            "prof": 941
+        },
+        {
+            "nome": "Kaveh",
+            "rank": "S",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kaveh7.png",
+            "hp": 11962,
+            "atq": 233,
+            "def": 750,
+            "prof": 1010
+        },
+        {
+            "nome": "Kirara",
+            "rank": "F",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kirara1.png",
+            "hp": 2623,
+            "atq": 48,
+            "def": 117,
+            "prof": 598
+        },
+        {
+            "nome": "Kirara",
+            "rank": "E",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kirara2.png",
+            "hp": 5072,
+            "atq": 92,
+            "def": 227,
+            "prof": 667
+        },
+        {
+            "nome": "Kirara",
+            "rank": "D",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kirara3.png",
+            "hp": 6457,
+            "atq": 118,
+            "def": 289,
+            "prof": 736
+        },
+        {
+            "nome": "Kirara",
+            "rank": "C",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kirara4.png",
+            "hp": 8024,
+            "atq": 146,
+            "def": 359,
+            "prof": 805
+        },
+        {
+            "nome": "Kirara",
+            "rank": "B",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kirara5.png",
+            "hp": 9408,
+            "atq": 172,
+            "def": 421,
+            "prof": 874
+        },
+        {
+            "nome": "Kirara",
+            "rank": "A",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kirara6.png",
+            "hp": 10794,
+            "atq": 197,
+            "def": 483,
+            "prof": 943
+        },
+        {
+            "nome": "Kirara",
+            "rank": "S",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kirara7.png",
+            "hp": 12179,
+            "atq": 223,
+            "def": 546,
+            "prof": 1012
         }
     ]
 }
