@@ -1262,53 +1262,13 @@
         },
         {
             "nome": "Kaveh",
-            "rank": "S",
+            "rank": "F",
             "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kaveh7.png",
-            "hp": 11962,
-            "atq": 233,
-            "def": 750,
-            "prof": 1010
-        },
-        {
-            "nome": "Kaveh",
-            "rank": "A",
-            "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kaveh6.png",
-            "hp": 10601,
-            "atq": 207,
-            "def": 665,
-            "prof": 941
-        },
-        {
-            "nome": "Kaveh",
-            "rank": "B",
-            "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kaveh5.png",
-            "hp": 9240,
-            "atq": 180,
-            "def": 579,
-            "prof": 872
-        },
-        {
-            "nome": "Kaveh",
-            "rank": "C",
-            "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kaveh4.png",
-            "hp": 7880,
-            "atq": 153,
-            "def": 494,
-            "prof": 803
-        },
-        {
-            "nome": "Kaveh",
-            "rank": "D",
-            "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kaveh3.png",
-            "hp": 6342,
-            "atq": 123,
-            "def": 398,
-            "prof": 734
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kaveh1.png",
+            "hp": 2576,
+            "atq": 50,
+            "def": 161,
+            "prof": 596
         },
         {
             "nome": "Kaveh",
@@ -1322,63 +1282,63 @@
         },
         {
             "nome": "Kaveh",
-            "rank": "F",
-            "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kaveh1.png",
-            "hp": 2576,
-            "atq": 50,
-            "def": 161,
-            "prof": 596
-        },
-        {
-            "nome": "Kirara",
-            "rank": "S",
-            "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kirara7.png",
-            "hp": 12179,
-            "atq": 223,
-            "def": 546,
-            "prof": 1012
-        },
-        {
-            "nome": "Kirara",
-            "rank": "A",
-            "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kirara6.png",
-            "hp": 10794,
-            "atq": 197,
-            "def": 483,
-            "prof": 943
-        },
-        {
-            "nome": "Kirara",
-            "rank": "B",
-            "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kirara5.png",
-            "hp": 9408,
-            "atq": 172,
-            "def": 421,
-            "prof": 874
-        },
-        {
-            "nome": "Kirara",
-            "rank": "C",
-            "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kirara4.png",
-            "hp": 8024,
-            "atq": 146,
-            "def": 359,
-            "prof": 805
-        },
-        {
-            "nome": "Kirara",
             "rank": "D",
             "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kirara3.png",
-            "hp": 6457,
-            "atq": 118,
-            "def": 289,
-            "prof": 736
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kaveh3.png",
+            "hp": 6342,
+            "atq": 123,
+            "def": 398,
+            "prof": 734
+        },
+        {
+            "nome": "Kaveh",
+            "rank": "C",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kaveh4.png",
+            "hp": 7880,
+            "atq": 153,
+            "def": 494,
+            "prof": 803
+        },
+        {
+            "nome": "Kaveh",
+            "rank": "B",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kaveh5.png",
+            "hp": 9240,
+            "atq": 180,
+            "def": 579,
+            "prof": 872
+        },
+        {
+            "nome": "Kaveh",
+            "rank": "A",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kaveh6.png",
+            "hp": 10601,
+            "atq": 207,
+            "def": 665,
+            "prof": 941
+        },
+        {
+            "nome": "Kaveh",
+            "rank": "S",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kaveh7.png",
+            "hp": 11962,
+            "atq": 233,
+            "def": 750,
+            "prof": 1010
+        },
+        {
+            "nome": "Kirara",
+            "rank": "F",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kirara1.png",
+            "hp": 2623,
+            "atq": 48,
+            "def": 117,
+            "prof": 598
         },
         {
             "nome": "Kirara",
@@ -1392,63 +1352,63 @@
         },
         {
             "nome": "Kirara",
-            "rank": "F",
-            "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kirara1.png",
-            "hp": 2623,
-            "atq": 48,
-            "def": 117,
-            "prof": 598
-        },
-        {
-            "nome": "Dori",
-            "rank": "S",
-            "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/dori7.png",
-            "hp": 12397,
-            "atq": 223,
-            "def": 723,
-            "prof": 1001
-        },
-        {
-            "nome": "Dori",
-            "rank": "A",
-            "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/dori6.png",
-            "hp": 10987,
-            "atq": 197,
-            "def": 641,
-            "prof": 932
-        },
-        {
-            "nome": "Dori",
-            "rank": "B",
-            "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/dori5.png",
-            "hp": 9576,
-            "atq": 172,
-            "def": 558,
-            "prof": 863
-        },
-        {
-            "nome": "Dori",
-            "rank": "C",
-            "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/dori4.png",
-            "hp": 8167,
-            "atq": 146,
-            "def": 476,
-            "prof": 794
-        },
-        {
-            "nome": "Dori",
             "rank": "D",
             "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/dori3.png",
-            "hp": 6573,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kirara3.png",
+            "hp": 6457,
             "atq": 118,
-            "def": 383,
-            "prof": 725
+            "def": 289,
+            "prof": 736
+        },
+        {
+            "nome": "Kirara",
+            "rank": "C",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kirara4.png",
+            "hp": 8024,
+            "atq": 146,
+            "def": 359,
+            "prof": 805
+        },
+        {
+            "nome": "Kirara",
+            "rank": "B",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kirara5.png",
+            "hp": 9408,
+            "atq": 172,
+            "def": 421,
+            "prof": 874
+        },
+        {
+            "nome": "Kirara",
+            "rank": "A",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kirara6.png",
+            "hp": 10794,
+            "atq": 197,
+            "def": 483,
+            "prof": 943
+        },
+        {
+            "nome": "Kirara",
+            "rank": "S",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kirara7.png",
+            "hp": 12179,
+            "atq": 223,
+            "def": 546,
+            "prof": 1012
+        },
+        {
+            "nome": "Dori",
+            "rank": "F",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/dori1.png",
+            "hp": 2670,
+            "atq": 48,
+            "def": 155,
+            "prof": 587
         },
         {
             "nome": "Dori",
@@ -1462,63 +1422,63 @@
         },
         {
             "nome": "Dori",
-            "rank": "F",
-            "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/dori1.png",
-            "hp": 2670,
-            "atq": 48,
-            "def": 155,
-            "prof": 587
-        },
-        {
-            "nome": "Eula",
-            "rank": "S",
-            "tier": 5,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/eula7.png",
-            "hp": 13225,
-            "atq": 342,
-            "def": 750,
-            "prof": 976
-        },
-        {
-            "nome": "Eula",
-            "rank": "A",
-            "tier": 5,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/eula6.png",
-            "hp": 11668,
-            "atq": 301,
-            "def": 662,
-            "prof": 907
-        },
-        {
-            "nome": "Eula",
-            "rank": "B",
-            "tier": 5,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/eula5.png",
-            "hp": 10118,
-            "atq": 261,
-            "def": 574,
-            "prof": 838
-        },
-        {
-            "nome": "Eula",
-            "rank": "C",
-            "tier": 5,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/eula4.png",
-            "hp": 8579,
-            "atq": 221,
-            "def": 487,
-            "prof": 769
-        },
-        {
-            "nome": "Eula",
             "rank": "D",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/dori3.png",
+            "hp": 6573,
+            "atq": 118,
+            "def": 383,
+            "prof": 725
+        },
+        {
+            "nome": "Dori",
+            "rank": "C",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/dori4.png",
+            "hp": 8167,
+            "atq": 146,
+            "def": 476,
+            "prof": 794
+        },
+        {
+            "nome": "Dori",
+            "rank": "B",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/dori5.png",
+            "hp": 9576,
+            "atq": 172,
+            "def": 558,
+            "prof": 863
+        },
+        {
+            "nome": "Dori",
+            "rank": "A",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/dori6.png",
+            "hp": 10987,
+            "atq": 197,
+            "def": 641,
+            "prof": 932
+        },
+        {
+            "nome": "Dori",
+            "rank": "S",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/dori7.png",
+            "hp": 12397,
+            "atq": 223,
+            "def": 723,
+            "prof": 1001
+        },
+        {
+            "nome": "Eula",
+            "rank": "F",
             "tier": 5,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/eula3.png",
-            "hp": 6839,
-            "atq": 176,
-            "def": 388,
-            "prof": 700
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/eula1.png",
+            "hp": 2670,
+            "atq": 69,
+            "def": 151,
+            "prof": 562
         },
         {
             "nome": "Eula",
@@ -1532,63 +1492,63 @@
         },
         {
             "nome": "Eula",
-            "rank": "F",
-            "tier": 5,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/eula1.png",
-            "hp": 2670,
-            "atq": 69,
-            "def": 151,
-            "prof": 562
-        },
-        {
-            "nome": "Faruzan",
-            "rank": "S",
-            "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/faruzan7.png",
-            "hp": 9569,
-            "atq": 196,
-            "def": 627,
-            "prof": 1019
-        },
-        {
-            "nome": "Faruzan",
-            "rank": "A",
-            "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/faruzan6.png",
-            "hp": 8481,
-            "atq": 174,
-            "def": 556,
-            "prof": 950
-        },
-        {
-            "nome": "Faruzan",
-            "rank": "B",
-            "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/faruzan5.png",
-            "hp": 7392,
-            "atq": 151,
-            "def": 485,
-            "prof": 881
-        },
-        {
-            "nome": "Faruzan",
-            "rank": "C",
-            "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/faruzan4.png",
-            "hp": 6304,
-            "atq": 129,
-            "def": 413,
-            "prof": 812
-        },
-        {
-            "nome": "Faruzan",
             "rank": "D",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/eula3.png",
+            "hp": 6839,
+            "atq": 176,
+            "def": 388,
+            "prof": 700
+        },
+        {
+            "nome": "Eula",
+            "rank": "C",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/eula4.png",
+            "hp": 8579,
+            "atq": 221,
+            "def": 487,
+            "prof": 769
+        },
+        {
+            "nome": "Eula",
+            "rank": "B",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/eula5.png",
+            "hp": 10118,
+            "atq": 261,
+            "def": 574,
+            "prof": 838
+        },
+        {
+            "nome": "Eula",
+            "rank": "A",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/eula6.png",
+            "hp": 11668,
+            "atq": 301,
+            "def": 662,
+            "prof": 907
+        },
+        {
+            "nome": "Eula",
+            "rank": "S",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/eula7.png",
+            "hp": 13225,
+            "atq": 342,
+            "def": 750,
+            "prof": 976
+        },
+        {
+            "nome": "Faruzan",
+            "rank": "F",
             "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/faruzan3.png",
-            "hp": 5074,
-            "atq": 104,
-            "def": 332,
-            "prof": 743
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/faruzan1.png",
+            "hp": 2061,
+            "atq": 42,
+            "def": 135,
+            "prof": 605
         },
         {
             "nome": "Faruzan",
@@ -1602,63 +1562,63 @@
         },
         {
             "nome": "Faruzan",
-            "rank": "F",
-            "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/faruzan1.png",
-            "hp": 2061,
-            "atq": 42,
-            "def": 135,
-            "prof": 605
-        },
-        {
-            "nome": "Fischl",
-            "rank": "S",
-            "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/fischl7.png",
-            "hp": 9189,
-            "atq": 244,
-            "def": 593,
-            "prof": 1003
-        },
-        {
-            "nome": "Fischl",
-            "rank": "A",
-            "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/fischl6.png",
-            "hp": 8143,
-            "atq": 216,
-            "def": 526,
-            "prof": 934
-        },
-        {
-            "nome": "Fischl",
-            "rank": "B",
-            "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/fischl5.png",
-            "hp": 7098,
-            "atq": 188,
-            "def": 458,
-            "prof": 865
-        },
-        {
-            "nome": "Fischl",
-            "rank": "C",
-            "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/fischl4.png",
-            "hp": 6053,
-            "atq": 160,
-            "def": 391,
-            "prof": 796
-        },
-        {
-            "nome": "Fischl",
             "rank": "D",
             "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/fischl3.png",
-            "hp": 4872,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/faruzan3.png",
+            "hp": 5074,
+            "atq": 104,
+            "def": 332,
+            "prof": 743
+        },
+        {
+            "nome": "Faruzan",
+            "rank": "C",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/faruzan4.png",
+            "hp": 6304,
             "atq": 129,
-            "def": 314,
-            "prof": 727
+            "def": 413,
+            "prof": 812
+        },
+        {
+            "nome": "Faruzan",
+            "rank": "B",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/faruzan5.png",
+            "hp": 7392,
+            "atq": 151,
+            "def": 485,
+            "prof": 881
+        },
+        {
+            "nome": "Faruzan",
+            "rank": "A",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/faruzan6.png",
+            "hp": 8481,
+            "atq": 174,
+            "def": 556,
+            "prof": 950
+        },
+        {
+            "nome": "Faruzan",
+            "rank": "S",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/faruzan7.png",
+            "hp": 9569,
+            "atq": 196,
+            "def": 627,
+            "prof": 1019
+        },
+        {
+            "nome": "Fischl",
+            "rank": "F",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/fischl1.png",
+            "hp": 1979,
+            "atq": 52,
+            "def": 127,
+            "prof": 589
         },
         {
             "nome": "Fischl",
@@ -1672,13 +1632,53 @@
         },
         {
             "nome": "Fischl",
-            "rank": "F",
+            "rank": "D",
             "tier": 4,
-            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/fischl1.png",
-            "hp": 1979,
-            "atq": 52,
-            "def": 127,
-            "prof": 589
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/fischl3.png",
+            "hp": 4872,
+            "atq": 129,
+            "def": 314,
+            "prof": 727
+        },
+        {
+            "nome": "Fischl",
+            "rank": "C",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/fischl4.png",
+            "hp": 6053,
+            "atq": 160,
+            "def": 391,
+            "prof": 796
+        },
+        {
+            "nome": "Fischl",
+            "rank": "B",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/fischl5.png",
+            "hp": 7098,
+            "atq": 188,
+            "def": 458,
+            "prof": 865
+        },
+        {
+            "nome": "Fischl",
+            "rank": "A",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/fischl6.png",
+            "hp": 8143,
+            "atq": 216,
+            "def": 526,
+            "prof": 934
+        },
+        {
+            "nome": "Fischl",
+            "rank": "S",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/fischl7.png",
+            "hp": 9189,
+            "atq": 244,
+            "def": 593,
+            "prof": 1003
         }
     ]
 }
