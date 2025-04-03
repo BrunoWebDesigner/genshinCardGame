@@ -176,7 +176,8 @@ function exibirColecao() {
             `;
         }
 
-        if (possuiCarta && possuiCarta.quantidade >= 3) {
+        // Show upgrade button: 2+ for S-rank, 3+ for others
+        if (possuiCarta && ((carta.rank === 'S' && possuiCarta.quantidade >= 2) || (carta.rank !== 'S' && possuiCarta.quantidade >= 3))) {
             cartaHtml += `
                 <button class="upgrade-btn" style="position: absolute; bottom: 5px; left: 5px; color: white; border: none; border-radius: 50%; width: 25px; height: 25px; cursor: pointer;">
                     ⇧
@@ -215,7 +216,6 @@ function exibirColecao() {
 }
 
 // Função para enviar uma carta para o deck
-// Função para enviar uma carta para o deck
 function enviarParaDeck(nomeCarta, rankCarta) {
     const carta = cartas.find(c => c.nome === nomeCarta && c.rank === rankCarta);
     const cartaNoDeck = deck.some(c => c.nome === carta.nome && c.rank === carta.rank);
@@ -234,25 +234,55 @@ function enviarParaDeck(nomeCarta, rankCarta) {
 // Função para realizar o upgrade de cartas
 function realizarUpgrade(nomeCarta, rankCarta) {
     const chaveCarta = nomeCarta + '-' + rankCarta;
-    if (colecaoJogador[chaveCarta] && colecaoJogador[chaveCarta].quantidade >= 3) {
-        // Deduct 2 if exactly 3 cards, otherwise deduct 3
-        const deductAmount = colecaoJogador[chaveCarta].quantidade === 3 ? 2 : 3;
-        colecaoJogador[chaveCarta].quantidade -= deductAmount;
+    const cartaAtual = colecaoJogador[chaveCarta];
 
-        let novoRank = obterProximoRank(rankCarta);
-        const novaChave = nomeCarta + '-' + novoRank;
+    // Check if upgrade is possible: 2+ for S-rank, 3+ for others
+    if (!cartaAtual || (rankCarta === 'S' && cartaAtual.quantidade < 2) || (rankCarta !== 'S' && cartaAtual.quantidade < 3)) {
+        showNotification('Quantidade insuficiente para upgrade!', 'error');
+        return;
+    }
+
+    // Always deduct 1 card for S-rank, 2 or 3 for others
+    const deductAmount = rankCarta === 'S' ? 1 : (cartaAtual.quantidade === 3 ? 2 : 3);
+    colecaoJogador[chaveCarta].quantidade -= deductAmount;
+
+    let novaCarta;
+    if (rankCarta === 'S') {
+        // For S-rank, get a random S-rank card
+        const sRankCartas = cartas.filter(c => c.rank === 'S');
+        novaCarta = sRankCartas[Math.floor(Math.random() * sRankCartas.length)];
+        const novaChave = novaCarta.nome + '-' + novaCarta.rank;
         if (colecaoJogador[novaChave]) {
             colecaoJogador[novaChave].quantidade += 1;
         } else {
-            let carta = cartas.find(c => c.nome === nomeCarta && c.rank === novoRank);
-            colecaoJogador[novaChave] = { ...carta, quantidade: 1 };
+            colecaoJogador[novaChave] = { ...novaCarta, quantidade: 1 };
         }
-
-        salvarDados();
-        exibirColecao();
     } else {
-        alert('Você precisa de pelo menos 3 cartas repetidas para realizar o upgrade!');
+        // For non-S ranks, upgrade to next rank
+        let novoRank = obterProximoRank(rankCarta);
+        const novaChave = nomeCarta + '-' + novoRank;
+        novaCarta = cartas.find(c => c.nome === nomeCarta && c.rank === novoRank);
+        if (colecaoJogador[novaChave]) {
+            colecaoJogador[novaChave].quantidade += 1;
+        } else {
+            colecaoJogador[novaChave] = { ...novaCarta, quantidade: 1 };
+        }
     }
+
+    // Remove original card if quantity drops to 0
+    if (colecaoJogador[chaveCarta].quantidade === 0) {
+        delete colecaoJogador[chaveCarta];
+    }
+
+    salvarDados();
+    exibirColecao();
+    
+    // Only show the amplified card for S-rank upgrades
+    if (rankCarta === 'S') {
+        exibirCartaAmpliada(novaCarta);
+    }
+    
+    showNotification(`Upgrade concluído! Nova carta: ${novaCarta.nome} (${novaCarta.rank})`, 'success');
 }
 
 // Função para obter o próximo rank
@@ -262,7 +292,7 @@ function obterProximoRank(rankAtual) {
     if (indexAtual < ranks.length - 1) {
         return ranks[indexAtual + 1];
     } else {
-        return rankAtual;
+        return rankAtual; // Returns 'S' if already S
     }
 }
 
@@ -509,7 +539,7 @@ function criarBotaoReset() {
         const confirmacao = confirm('Você tem certeza de que deseja resetar o jogo? Todos os dados serão apagados.');
         if (confirmacao) {
             localStorage.clear();
-            moedas = 100; // Resetar moedas para o valor inicial
+            moedas = 100000; // Resetar moedas para o valor inicial
             deck = [];
             colecaoJogador = {};
             salvarDados();
