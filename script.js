@@ -528,6 +528,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.getElementById('gacha-btn').addEventListener('click', exibirGacha);
+document.getElementById('gacha-btn').addEventListener('click', exibirGacha);
 document.getElementById('colecao-btn').addEventListener('click', exibirColecao);
 document.getElementById('batalha-btn').addEventListener('click', function() {
     window.location.href = 'batalha.html';
