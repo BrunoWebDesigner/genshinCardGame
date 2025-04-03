@@ -539,7 +539,7 @@ function criarBotaoReset() {
         const confirmacao = confirm('Você tem certeza de que deseja resetar o jogo? Todos os dados serão apagados.');
         if (confirmacao) {
             localStorage.clear();
-            moedas = 100000; // Resetar moedas para o valor inicial
+            moedas = 100; // Resetar moedas para o valor inicial
             deck = [];
             colecaoJogador = {};
             salvarDados();
