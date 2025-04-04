@@ -435,7 +435,7 @@ footer {
 }
 
 #battle-result {
-    height: 12rem;
+    height: 14rem;
     display: flex;
     flex-direction: column;
     justify-content: center;

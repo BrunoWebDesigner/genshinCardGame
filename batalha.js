@@ -186,11 +186,37 @@ async function endBattle() {
         updateCoins(coinsEarned);
 
         const beatenLevels = JSON.parse(localStorage.getItem('beatenLevels')) || [];
-        if (!beatenLevels.includes(opponentLevel)) {
+
+        // Handle level 100 rewards separately
+        if (opponentLevel === 100) {
+            let rewardCard;
+            if (!beatenLevels.includes(100)) {
+                // First victory against level 100: S-rank card
+                rewardCard = await getRandomCardByRank('S');
+                beatenLevels.push(100); // Mark level 100 as beaten
+                localStorage.setItem('beatenLevels', JSON.stringify(beatenLevels));
+                rewardMessage = `<br>Primeira Vitória Épica contra Nível 100: ${rewardCard.nome} (S)!`;
+            } else {
+                // Subsequent victories against level 100: B-rank card
+                rewardCard = await getRandomCardByRank('B');
+                rewardMessage = `<br>Recompensa por vitória contra Nível 100: ${rewardCard.nome} (B)!`;
+            }
+
+            if (rewardCard) {
+                const chaveCarta = rewardCard.nome + '-' + rewardCard.rank;
+                let colecaoJogador = JSON.parse(localStorage.getItem('colecaoJogador')) || {};
+                if (colecaoJogador[chaveCarta]) {
+                    colecaoJogador[chaveCarta].quantidade += 1;
+                } else {
+                    colecaoJogador[chaveCarta] = { ...rewardCard, quantidade: 1 };
+                }
+                localStorage.setItem('colecaoJogador', JSON.stringify(colecaoJogador));
+            }
+        } else if (!beatenLevels.includes(opponentLevel)) {
+            // First victory for other levels: Use default rank system
             beatenLevels.push(opponentLevel);
             localStorage.setItem('beatenLevels', JSON.stringify(beatenLevels));
 
-            // Award a random card based on opponent level
             const rank = determineRewardRank(opponentLevel);
             const rewardCard = await getRandomCardByRank(rank);
             if (rewardCard) {
