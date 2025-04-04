@@ -67,7 +67,7 @@ function exibirGacha() {
         <p>Você tem ${moedas} moedas.</p>
         <div style="display: flex; justify-content: center; gap: 10px;">
             <button id="gacha-rodar-btn">Gacha -10 Moedas</button>
-            <button id="gacha-btn2">Gacha -1000 Moedas</button>
+            <button id="gacha-btn2">Gacha -1500 Moedas</button>
         </div>
         <div id="resultado-gacha"></div>
     `;
@@ -128,9 +128,9 @@ function gacha() {
     }
 }
 
-// Função para realizar o gacha premium (1000 moedas)
+// Função para realizar o gacha premium (1500 moedas)
 function gacha2() {
-    const custoPacote = 1000;
+    const custoPacote = 1500;
     if (moedas >= custoPacote) {
         moedas -= custoPacote;
         let rankProb = Math.random();
