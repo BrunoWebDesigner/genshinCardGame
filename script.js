@@ -49,7 +49,6 @@ function showNotification(message, type = 'info') {
     }, 3000);
 }
 
-// Carregar o arquivo JSON de cartas e depois exibir a coleção
 fetch('cartas.json')
     .then(response => response.json())
     .then(data => {
@@ -60,20 +59,24 @@ fetch('cartas.json')
         console.error('Erro ao carregar o arquivo JSON de cartas:', error);
     });
 
-// Função para exibir a tela de Gacha
+// Função consolidada para exibir a tela de Gacha com ambos os botões
 function exibirGacha() {
     const mainContent = document.getElementById('main-content');
     mainContent.innerHTML = `
         <h2>Sistema de Gacha</h2>
         <p>Você tem ${moedas} moedas.</p>
-        <button id="gacha-rodar-btn">Rodar Gacha (Custo: 10 Moedas)</button>
+        <div style="display: flex; justify-content: center; gap: 10px;">
+            <button id="gacha-rodar-btn">Gacha -10 Moedas</button>
+            <button id="gacha-btn2">Gacha -1000 Moedas</button>
+        </div>
         <div id="resultado-gacha"></div>
     `;
     document.getElementById('gacha-rodar-btn').addEventListener('click', gacha);
-    document.getElementById('coin-amount').textContent = moedas; // Add this
+    document.getElementById('gacha-btn2').addEventListener('click', gacha2);
+    document.getElementById('coin-amount').textContent = moedas;
 }
 
-// Função para realizar o gacha
+// Função para realizar o gacha padrão (10 moedas)
 function gacha() {
     const custoPacote = 10;
     if (moedas >= custoPacote) {
@@ -98,13 +101,7 @@ function gacha() {
         }
 
         let tierProb = Math.random();
-        let tierObtido;
-
-        if (tierProb < 1 / 3) {
-            tierObtido = 5;
-        } else {
-            tierObtido = 4;
-        }
+        let tierObtido = tierProb < 1 / 3 ? 5 : 4;
 
         let cartasRankTier = cartas.filter(carta => carta.rank === rankObtido && carta.tier === tierObtido);
         if (cartasRankTier.length === 0) {
@@ -124,8 +121,53 @@ function gacha() {
         const resultadoGacha = document.getElementById('resultado-gacha');
         resultadoGacha.innerHTML = `Você conseguiu a carta: ${cartaObtida.nome} (${cartaObtida.rank}, Tier ${cartaObtida.tier})!`;
         mostrarCartaAnimada(cartaObtida);
-        exibirGacha();
-        document.getElementById('coin-amount').textContent = moedas; // Add this
+        exibirGacha(); // Refresh the gacha screen
+        document.getElementById('coin-amount').textContent = moedas;
+    } else {
+        alert('Moedas insuficientes!');
+    }
+}
+
+// Função para realizar o gacha premium (1000 moedas)
+function gacha2() {
+    const custoPacote = 1000;
+    if (moedas >= custoPacote) {
+        moedas -= custoPacote;
+        let rankProb = Math.random();
+        let rankObtido;
+
+        // Higher probabilities for better ranks
+        if (rankProb < 0.05) {
+            rankObtido = 'S';
+        } else if (rankProb < 0.5) {
+            rankObtido = 'A';
+        } else {
+            rankObtido = 'B';
+        }
+
+        let tierProb = Math.random();
+        let tierObtido = tierProb < 0.5 ? 5 : 4; // 50% chance for Tier 5
+
+        let cartasRankTier = cartas.filter(carta => carta.rank === rankObtido && carta.tier === tierObtido);
+        if (cartasRankTier.length === 0) {
+            console.error("Nenhuma carta disponível para o rank e tier selecionados.");
+            return;
+        }
+        
+        let cartaObtida = cartasRankTier[Math.floor(Math.random() * cartasRankTier.length)];
+        const chaveCarta = cartaObtida.nome + '-' + cartaObtida.rank;
+        if (colecaoJogador[chaveCarta]) {
+            colecaoJogador[chaveCarta].quantidade += 1;
+        } else {
+            colecaoJogador[chaveCarta] = { ...cartaObtida, quantidade: 1 };
+        }
+
+        salvarDados();
+        const resultadoGacha = document.getElementById('resultado-gacha');
+        resultadoGacha.innerHTML = `Você conseguiu a carta: ${cartaObtida.nome} (${cartaObtida.rank}, Tier ${cartaObtida.tier})!`;
+        mostrarCartaAnimada(cartaObtida);
+        exibirGacha(); // Refresh the gacha screen
+        document.getElementById('coin-amount').textContent = moedas;
     } else {
         alert('Moedas insuficientes!');
     }
@@ -557,7 +599,7 @@ document.addEventListener('DOMContentLoaded', function() {
     criarBotaoReset();
 });
 
-document.getElementById('gacha-btn').addEventListener('click', exibirGacha);
+// Event listeners
 document.getElementById('gacha-btn').addEventListener('click', exibirGacha);
 document.getElementById('colecao-btn').addEventListener('click', exibirColecao);
 document.getElementById('batalha-btn').addEventListener('click', function() {
