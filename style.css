@@ -657,6 +657,11 @@ footer a {
     background-color: #28a745; /* Green to indicate active filter */
 }
 
+#botao-remover-todas {
+    padding: 2px;
+    right: 8px !important;
+}
+
 @media (max-width: 800px) {
     #reset-btn {
         top: 10px; /* Moved down below header (20px padding + content) */
@@ -733,6 +738,7 @@ footer a {
     }
     #main-content {
         margin-top: 250px; /* Push content below fixed header and deck */
+        margin-bottom: 40px;
     }
     #campo-batalha {
         height: 30rem;
@@ -747,6 +753,7 @@ footer a {
         margin-top: 1px;
     }
     #botao-remover-todas {
+        bottom: 90px !important;
         scale: 0.8;
         right: 8px !important;
     }
