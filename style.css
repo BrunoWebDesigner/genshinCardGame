@@ -638,6 +638,25 @@ footer a {
     background-color: #00215e; /* Even darker blue on hover */
 }
 
+.filter-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: #0056b3;
+}
+
+.filter-btn.active {
+    background-color: #28a745; /* Green to indicate active filter */
+}
+
 @media (max-width: 800px) {
     #reset-btn {
         top: 10px; /* Moved down below header (20px padding + content) */

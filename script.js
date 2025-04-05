@@ -20,17 +20,17 @@ function showNotification(message, type = 'info') {
 
     switch (type) {
         case 'success':
-            notification.style.backgroundColor = '#28a745'; // Green
+            notification.style.backgroundColor = '#28a745';
             break;
         case 'warning':
-            notification.style.backgroundColor = '#ffc107'; // Yellow
-            notification.style.color = '#333'; // Darker text for contrast
+            notification.style.backgroundColor = '#ffc107';
+            notification.style.color = '#333';
             break;
         case 'error':
-            notification.style.backgroundColor = '#dc3545'; // Red
+            notification.style.backgroundColor = '#dc3545';
             break;
         default:
-            notification.style.backgroundColor = '#007bff'; // Blue
+            notification.style.backgroundColor = '#007bff';
     }
 
     document.body.appendChild(notification);
@@ -55,7 +55,7 @@ fetch('cartas.json')
         cartas.forEach(carta => {
             cartasLookup[`${carta.nome}-${carta.rank}`] = carta;
         });
-        exibirColecao();
+        exibirColecao('todos'); // Default filter
     })
     .catch(error => {
         console.error('Erro ao carregar o arquivo JSON de cartas:', error);
@@ -188,8 +188,8 @@ function mostrarCartaAnimada(carta) {
     `;
 }
 
-// Função para exibir a coleção (initial load)
-function exibirColecao() {
+// Função para exibir a coleção com filtro
+function exibirColecao(filtro = 'todos') {
     const mainContent = document.getElementById('main-content');
     mainContent.innerHTML = `
         <h2>Catalogo de Cartas</h2>
@@ -202,7 +202,26 @@ function exibirColecao() {
         return;
     }
 
-    cartas.forEach(carta => {
+    let filteredCartas = [];
+    if (filtro === 'todos') {
+        filteredCartas = [...cartas].sort((a, b) => a.nome.localeCompare(b.nome)); // Alphabetical order
+    } else if (filtro === 'nao-tenho') {
+        filteredCartas = cartas.filter(carta => !colecaoJogador[`${carta.nome}-${carta.rank}`]);
+    } else if (filtro === 'evoluir') {
+        const nomesEvolutiveis = new Set();
+        Object.keys(colecaoJogador).forEach(chave => {
+            const [nome, rank] = chave.split('-');
+            const quantidade = colecaoJogador[chave].quantidade;
+            if ((rank === 'S' && quantidade >= 2) || (rank !== 'S' && quantidade >= 3)) {
+                nomesEvolutiveis.add(nome);
+            }
+        });
+        filteredCartas = cartas.filter(carta => nomesEvolutiveis.has(carta.nome));
+    } else if (filtro === 'rank-s') {
+        filteredCartas = cartas.filter(carta => carta.rank === 'S');
+    }
+
+    filteredCartas.forEach(carta => {
         const chaveCarta = `${carta.nome}-${carta.rank}`;
         const possuiCarta = colecaoJogador[chaveCarta];
         const transparencia = possuiCarta ? '1' : '0.2';
@@ -255,6 +274,14 @@ function exibirColecao() {
             const cartaRank = this.parentElement.getAttribute('data-rank');
             realizarUpgrade(cartaNome, cartaRank);
         });
+    });
+
+    // Highlight active filter button
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.id === `filter-${filtro}`) {
+            btn.classList.add('active');
+        }
     });
 }
 
@@ -538,7 +565,7 @@ function criarBotaoRemoverTodas() {
     botaoRemoverTodas.style.backgroundColor = 'red';
     botaoRemoverTodas.style.color = 'white';
     botaoRemoverTodas.style.border = 'none';
-    botaoRemoverTodas.style.padding = '10px';
+    botaoRemoverTodas.style.padding = ' filter10px';
     botaoRemoverTodas.style.cursor = 'pointer';
     botaoRemoverTodas.style.borderRadius = '5px';
     botaoRemoverTodas.style.position = 'fixed';
@@ -618,17 +645,23 @@ function criarBotaoReset() {
     });
 }
 
-// Inicializar
+// Inicializar e adicionar listeners para os filtros
 document.addEventListener('DOMContentLoaded', () => {
     carregarDados();
     atualizarExibicaoDeck();
     criarBotaoRemoverTodas();
     criarBotaoReset();
+
+    // Filter button listeners
+    document.getElementById('filter-todos').addEventListener('click', () => exibirColecao('todos'));
+    document.getElementById('filter-nao-tenho').addEventListener('click', () => exibirColecao('nao-tenho'));
+    document.getElementById('filter-evoluir').addEventListener('click', () => exibirColecao('evoluir'));
+    document.getElementById('filter-rank-s').addEventListener('click', () => exibirColecao('rank-s'));
 });
 
 // Event listeners
 document.getElementById('gacha-btn').addEventListener('click', exibirGacha);
-document.getElementById('colecao-btn').addEventListener('click', exibirColecao);
+document.getElementById('colecao-btn').addEventListener('click', () => exibirColecao('todos'));
 document.getElementById('batalha-btn').addEventListener('click', () => {
     window.location.href = 'batalha.html';
 });
