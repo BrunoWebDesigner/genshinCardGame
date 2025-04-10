@@ -2019,6 +2019,356 @@
             "atq": 1000,
             "def": 800,
             "prof": 1031
+        },
+        {
+            "nome": "Kazuha",
+            "rank": "F",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kazuha1.png",
+            "hp": 2695,
+            "atq": 59,
+            "def": 162,
+            "prof": 610
+        },
+        {
+            "nome": "Kazuha",
+            "rank": "E",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kazuha2.png",
+            "hp": 5366,
+            "atq": 119,
+            "def": 324,
+            "prof": 679
+        },
+        {
+            "nome": "Kazuha",
+            "rank": "D",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kazuha3.png",
+            "hp": 6902,
+            "atq": 153,
+            "def": 417,
+            "prof": 748
+        },
+        {
+            "nome": "Kazuha",
+            "rank": "C",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kazuha4.png",
+            "hp": 8658,
+            "atq": 192,
+            "def": 523,
+            "prof": 817
+        },
+        {
+            "nome": "Kazuha",
+            "rank": "B",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kazuha5.png",
+            "hp": 10212,
+            "atq": 226,
+            "def": 617,
+            "prof": 886
+        },
+        {
+            "nome": "Kazuha",
+            "rank": "A",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kazuha6.png",
+            "hp": 11776,
+            "atq": 261,
+            "def": 711,
+            "prof": 955
+        },
+        {
+            "nome": "Kazuha",
+            "rank": "S",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kazuha7.png",
+            "hp": 13348,
+            "atq": 296,
+            "def": 806,
+            "prof": 1024
+        },
+        {
+            "nome": "Keqing",
+            "rank": "F",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/keqing1.png",
+            "hp": 2646,
+            "atq": 65,
+            "def": 161,
+            "prof": 591
+        },
+        {
+            "nome": "Keqing",
+            "rank": "E",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/keqing2.png",
+            "hp": 5267,
+            "atq": 129,
+            "def": 321,
+            "prof": 660
+        },
+        {
+            "nome": "Keqing",
+            "rank": "D",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/keqing3.png",
+            "hp": 6775,
+            "atq": 166,
+            "def": 413,
+            "prof": 729
+        },
+        {
+            "nome": "Keqing",
+            "rank": "C",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/keqing4.png",
+            "hp": 8499,
+            "atq": 209,
+            "def": 518,
+            "prof": 798
+        },
+        {
+            "nome": "Keqing",
+            "rank": "B",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/keqing5.png",
+            "hp": 10025,
+            "atq": 247,
+            "def": 611,
+            "prof": 867
+        },
+        {
+            "nome": "Keqing",
+            "rank": "A",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/keqing6.png",
+            "hp": 11560,
+            "atq": 284,
+            "def": 705,
+            "prof": 936
+        },
+        {
+            "nome": "Keqing",
+            "rank": "S",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/keqing7.png",
+            "hp": 13103,
+            "atq": 322,
+            "def": 799,
+            "prof": 1005
+        },
+        {
+            "nome": "Kuki",
+            "rank": "F",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kuki1.png",
+            "hp": 2646,
+            "atq": 45,
+            "def": 161,
+            "prof": 590
+        },
+        {
+            "nome": "Kuki",
+            "rank": "E",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kuki2.png",
+            "hp": 5117,
+            "atq": 88,
+            "def": 312,
+            "prof": 659
+        },
+        {
+            "nome": "Kuki",
+            "rank": "D",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kuki3.png",
+            "hp": 6515,
+            "atq": 112,
+            "def": 398,
+            "prof": 728
+        },
+        {
+            "nome": "Kuki",
+            "rank": "C",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kuki4.png",
+            "hp": 8095,
+            "atq": 139,
+            "def": 494,
+            "prof": 797
+        },
+        {
+            "nome": "Kuki",
+            "rank": "B",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kuki5.png",
+            "hp": 9492,
+            "atq": 164,
+            "def": 579,
+            "prof": 866
+        },
+        {
+            "nome": "Kuki",
+            "rank": "A",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kuki6.png",
+            "hp": 10890,
+            "atq": 188,
+            "def": 665,
+            "prof": 935
+        },
+        {
+            "nome": "Kuki",
+            "rank": "S",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/kuki7.png",
+            "hp": 12288,
+            "atq": 212,
+            "def": 750,
+            "prof": 1004
+        },
+        {
+            "nome": "Layla",
+            "rank": "F",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/layla1.png",
+            "hp": 2389,
+            "atq": 46,
+            "def": 141,
+            "prof": 557
+        },
+        {
+            "nome": "Layla",
+            "rank": "E",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/layla2.png",
+            "hp": 4619,
+            "atq": 90,
+            "def": 272,
+            "prof": 626
+        },
+        {
+            "nome": "Layla",
+            "rank": "D",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/layla3.png",
+            "hp": 5881,
+            "atq": 114,
+            "def": 347,
+            "prof": 695
+        },
+        {
+            "nome": "Layla",
+            "rank": "C",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/layla4.png",
+            "hp": 7307,
+            "atq": 142,
+            "def": 431,
+            "prof": 764
+        },
+        {
+            "nome": "Layla",
+            "rank": "B",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/layla5.png",
+            "hp": 8568,
+            "atq": 167,
+            "def": 506,
+            "prof": 833
+        },
+        {
+            "nome": "Layla",
+            "rank": "A",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/layla6.png",
+            "hp": 9830,
+            "atq": 191,
+            "def": 580,
+            "prof": 902
+        },
+        {
+            "nome": "Layla",
+            "rank": "S",
+            "tier": 4,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/layla7.png",
+            "hp": 11092,
+            "atq": 216,
+            "def": 655,
+            "prof": 971
+        },
+        {
+            "nome": "Nilou",
+            "rank": "F",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/nilou1.png",
+            "hp": 3066,
+            "atq": 46,
+            "def": 147,
+            "prof": 570
+        },
+        {
+            "nome": "Nilou",
+            "rank": "E",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/nilou2.png",
+            "hp": 6104,
+            "atq": 92,
+            "def": 292,
+            "prof": 639
+        },
+        {
+            "nome": "Nilou",
+            "rank": "D",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/nilou3.png",
+            "hp": 7852,
+            "atq": 118,
+            "def": 376,
+            "prof": 708
+        },
+        {
+            "nome": "Nilou",
+            "rank": "C",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/nilou4.png",
+            "hp": 9850,
+            "atq": 148,
+            "def": 472,
+            "prof": 777
+        },
+        {
+            "nome": "Nilou",
+            "rank": "B",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/nilou5.png",
+            "hp": 11617,
+            "atq": 175,
+            "def": 557,
+            "prof": 846
+        },
+        {
+            "nome": "Nilou",
+            "rank": "A",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/nilou6.png",
+            "hp": 13397,
+            "atq": 202,
+            "def": 642,
+            "prof": 915
+        },
+        {
+            "nome": "Nilou",
+            "rank": "S",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/nilou7.png",
+            "hp": 15184,
+            "atq": 229,
+            "def": 728,
+            "prof": 984
         }
     ]
 }
