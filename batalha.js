@@ -305,8 +305,7 @@ function iniciarBatalha(nivelOponente) {
     });
 }
 
-// Função para gerar as cartas do oponente
-async function gerarCartasOponente(nivel) {
+async function gerarCartasOponente(nivel, customDecks = {}) {
     try {
         const response = await fetch('cartas.json');
         const dados = await response.json();
@@ -318,9 +317,9 @@ async function gerarCartasOponente(nivel) {
         const cartasSelecionadas = [];
         const usedCardIds = new Set();
 
-        // Special case for Level 100: Define exact deck with random order
-        if (nivel === 100) {
-            const level100Deck = [
+        // Default deck for levels 95 and 100 if no custom deck is provided
+        const customDecks = {
+            level95: [
                 "Venti-S",
                 "Zhongli-S",
                 "Raiden-S",
@@ -328,14 +327,37 @@ async function gerarCartasOponente(nivel) {
                 "Furina-S",
                 "Mavuika-S",
                 "Hutao-S"
-            ];
-            // Shuffle the deck for random order
-            for (let i = level100Deck.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [level100Deck[i], level100Deck[j]] = [level100Deck[j], level100Deck[i]];
+            ],
+            level100: [
+                "Barbatos-S",
+                "Morax-S",
+                "Raiden Ei-S",
+                "Rukkhadevata-S",
+                "Murata-S",
+                "Mavuika-S",
+                "Hutao-S"
+            ]
+        };
+
+        // Special case for Level 95 or 100: Use custom deck or default deck
+        if (nivel === 95 || nivel === 100) {
+            // Select the appropriate custom deck or fall back to default
+            const selectedDeck = (nivel === 95 ? customDecks.level95 : customDecks.level100) || defaultDeck;
+
+            // Ensure the deck has exactly 7 cards
+            if (selectedDeck.length !== 7) {
+                console.warn(`Deck personalizado para nível ${nivel} inválido: ${selectedDeck.length} cartas fornecidas, usando deck padrão.`);
+                selectedDeck = defaultDeck;
             }
 
-            for (const cardId of level100Deck) {
+            // Shuffle the deck for random order
+            const shuffledDeck = [...selectedDeck];
+            for (let i = shuffledDeck.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffledDeck[i], shuffledDeck[j]] = [shuffledDeck[j], shuffledDeck[i]];
+            }
+
+            for (const cardId of shuffledDeck) {
                 const [nome, rank] = cardId.split('-');
                 const card = cartasDisponiveis.find(c => 
                     c.nome === nome && c.rank === rank
@@ -348,12 +370,12 @@ async function gerarCartasOponente(nivel) {
             }
 
             if (cartasSelecionadas.length !== 7) {
-                throw new Error(`Deck de nível 100 inválido: ${cartasSelecionadas.length} cartas encontradas, esperado 7.`);
+                throw new Error(`Deck de nível ${nivel} inválido: ${cartasSelecionadas.length} cartas encontradas, esperado 7.`);
             }
             return cartasSelecionadas;
         }
 
-        // Define rank distribution based on your table
+        // Define rank distribution for levels 1–95
         let distribuicaoRanks;
         if (nivel <= 5) {
             distribuicaoRanks = { F: 7, E: 0, D: 0, C: 0, B: 0, A: 0, S: 0 };
@@ -390,7 +412,7 @@ async function gerarCartasOponente(nivel) {
         } else if (nivel <= 85) {
             distribuicaoRanks = { F: 0, E: 0, D: 0, C: 0, B: 0, A: 1, S: 6 };
         } else {
-            distribuicaoRanks = { F: 0, E: 0, D: 0, C: 0, B: 0, A: 0, S: 7 }; // 90–95
+            distribuicaoRanks = { F: 0, E: 0, D: 0, C: 0, B: 0, A: 0, S: 7 }; // Levels 86–95
         }
 
         // Select cards based on distribution

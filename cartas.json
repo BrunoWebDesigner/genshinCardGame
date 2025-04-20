@@ -2579,6 +2579,56 @@
             "atq": 243,
             "def": 547,
             "prof": 986
+        },
+        {
+            "nome": "Morax",
+            "rank": "S",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/zhongliDeus.png",
+            "hp": 25000,
+            "atq": 1000,
+            "def": 2400,
+            "prof": 1000
+        },
+        {
+            "nome": "Murata",
+            "rank": "S",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/murataDeus.png",
+            "hp": 25000,
+            "atq": 1000,
+            "def": 1000,
+            "prof": 2400
+        },
+        {
+            "nome": "Rukkhadevata",
+            "rank": "S",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/rukkhadevataDeus.png",
+            "hp": 20000,
+            "atq": 2400,
+            "def": 1000,
+            "prof": 2500
+        },
+        {
+            "nome": "Barbatos",
+            "rank": "S",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/ventiDeus.png",
+            "hp": 24000,
+            "atq": 2400,
+            "def": 2400,
+            "prof": 2400
+        },
+        {
+            "nome": "Raiden Ei",
+            "rank": "S",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/shogunDeus.png",
+            "hp": 20000,
+            "atq": 2500,
+            "def": 1000,
+            "prof": 2400
         }
     ]
 }
