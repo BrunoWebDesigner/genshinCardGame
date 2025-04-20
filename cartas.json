@@ -2369,6 +2369,216 @@
             "atq": 229,
             "def": 728,
             "prof": 984
+        },
+        {
+            "nome": "Klee",
+            "rank": "F",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/klee1.png",
+            "hp": 2077,
+            "atq": 62,
+            "def": 124,
+            "prof": 581
+        },
+        {
+            "nome": "Klee",
+            "rank": "E",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/klee2.png",
+            "hp": 4135,
+            "atq": 125,
+            "def": 247,
+            "prof": 650
+        },
+        {
+            "nome": "Klee",
+            "rank": "D",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/klee3.png",
+            "hp": 5319,
+            "atq": 160,
+            "def": 317,
+            "prof": 719
+        },
+        {
+            "nome": "Klee",
+            "rank": "C",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/klee4.png",
+            "hp": 6672,
+            "atq": 201,
+            "def": 398,
+            "prof": 788
+        },
+        {
+            "nome": "Klee",
+            "rank": "B",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/klee5.png",
+            "hp": 7870,
+            "atq": 237,
+            "def": 470,
+            "prof": 857
+        },
+        {
+            "nome": "Klee",
+            "rank": "A",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/klee6.png",
+            "hp": 9075,
+            "atq": 274,
+            "def": 542,
+            "prof": 926
+        },
+        {
+            "nome": "Klee",
+            "rank": "S",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/klee7.png",
+            "hp": 10286,
+            "atq": 310,
+            "def": 614,
+            "prof": 995
+        },
+        {
+            "nome": "Yae",
+            "rank": "F",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/yae1.png",
+            "hp": 2094,
+            "atq": 68,
+            "def": 114,
+            "prof": 592
+        },
+        {
+            "nome": "Yae",
+            "rank": "E",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/yae2.png",
+            "hp": 4170,
+            "atq": 136,
+            "def": 228,
+            "prof": 661
+        },
+        {
+            "nome": "Yae",
+            "rank": "D",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/yae3.png",
+            "hp": 5363,
+            "atq": 175,
+            "def": 294,
+            "prof": 730
+        },
+        {
+            "nome": "Yae",
+            "rank": "C",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/yae4.png",
+            "hp": 6728,
+            "atq": 220,
+            "def": 368,
+            "prof": 799
+        },
+        {
+            "nome": "Yae",
+            "rank": "B",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/yae5.png",
+            "hp": 7935,
+            "atq": 259,
+            "def": 435,
+            "prof": 868
+        },
+        {
+            "nome": "Yae",
+            "rank": "A",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/yae6.png",
+            "hp": 9151,
+            "atq": 299,
+            "def": 501,
+            "prof": 937
+        },
+        {
+            "nome": "Yae",
+            "rank": "S",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/yae7.png",
+            "hp": 10372,
+            "atq": 339,
+            "def": 568,
+            "prof": 1006
+        },
+        {
+            "nome": "Yelan",
+            "rank": "F",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/yelan1.png",
+            "hp": 2918,
+            "atq": 49,
+            "def": 110,
+            "prof": 572
+        },
+        {
+            "nome": "Yelan",
+            "rank": "E",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/yelan2.png",
+            "hp": 5809,
+            "atq": 98,
+            "def": 220,
+            "prof": 641
+        },
+        {
+            "nome": "Yelan",
+            "rank": "D",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/yelan3.png",
+            "hp": 7472,
+            "atq": 126,
+            "def": 283,
+            "prof": 710
+        },
+        {
+            "nome": "Yelan",
+            "rank": "C",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/yelan4.png",
+            "hp": 9373,
+            "atq": 158,
+            "def": 355,
+            "prof": 779
+        },
+        {
+            "nome": "Yelan",
+            "rank": "B",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/yelan5.png",
+            "hp": 11055,
+            "atq": 186,
+            "def": 419,
+            "prof": 848
+        },
+        {
+            "nome": "Yelan",
+            "rank": "A",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/yelan6.png",
+            "hp": 12749,
+            "atq": 215,
+            "def": 483,
+            "prof": 917
+        },
+        {
+            "nome": "Yelan",
+            "rank": "S",
+            "tier": 5,
+            "imagem": "https://raw.githubusercontent.com/BrunoWebDesigner/genshinCards/main/yelan7.png",
+            "hp": 14450,
+            "atq": 243,
+            "def": 547,
+            "prof": 986
         }
     ]
 }
